@@ -113,6 +113,7 @@ class FirstWindow(MDScreen):
 		id=False
 		try:
 			pokemon_id=int(Pokemon)
+			Pokemon=int(Pokemon)
 			id=True
 		except ValueError:
 			pass
