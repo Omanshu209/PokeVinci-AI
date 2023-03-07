@@ -97,12 +97,16 @@ WindowManager:
 """
 
 class SliverToolbar(MDTopAppBar):
+    
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.shadow_color = (0, 0, 0, 0)
         self.type_height = "medium"
         self.headline_text = "Headline medium"
-        self.left_action_items = [["arrow-left", lambda x: x]]
+        self.left_action_items = [["arrow-left", lambda x: self.ChangeScreen()]]
+        
+    def ChangeScreen(self):
+    	pass
 
 class FirstWindow(MDScreen):
 	
