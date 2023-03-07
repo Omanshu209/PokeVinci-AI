@@ -4,9 +4,12 @@ from kivymd.uix.screenmanager import MDScreenManager
 from kivy.loader import Loader
 from kivymd.uix.screen import MDScreen
 from pokebase import pokemon as pb
+from kivymd.uix.toolbar import MDTopAppBar
 from pokebase import SpriteResource as pokeimg
 
 KV="""
+#:import SliverToolbar __main__.SliverToolbar
+
 WindowManager:
 	FirstWindow:
 	SecondWindow:
@@ -60,6 +63,9 @@ WindowManager:
     			text:"Pokemon"
     			size_hint:.4,.1
     			pos_hint:{"center_x":.5}
+    			on_release:
+    				app.root.current = "PokemonDetails"
+                	root.manager.transition.direction = "left"
 		
 		MDRectangleFlatButton:
 			text:'D   e   v   e   l   o   p   e   d       B   y       O   m   a   n   s   h   u' 
@@ -69,7 +75,34 @@ WindowManager:
 	
 <SecondWindow>:
 	name:"PokemonDetails"
+	MDSliverAppbar:
+        background_color: "2d4a50"
+        toolbar_cls: SliverToolbar()
+
+        MDSliverAppbarHeader:
+
+            MDRelativeLayout:
+
+                AsyncImage:
+                    id:PokeDetailImg
+                    allow_stretch:True
+                    source: "pokeball.png"
+
+        MDSliverAppbarContent:
+            id: content
+            orientation: "vertical"
+            padding: "12dp"
+            spacing: "12dp"
+            adaptive_height: True
 """
+
+class SliverToolbar(MDTopAppBar):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.shadow_color = (0, 0, 0, 0)
+        self.type_height = "medium"
+        self.headline_text = "Headline medium"
+        self.left_action_items = [["arrow-left", lambda x: x]]
 
 class FirstWindow(MDScreen):
 	
@@ -95,6 +128,8 @@ class FirstWindow(MDScreen):
 			pokemon_img=pokeimg('pokemon',pokemon_id).url
 			self.ids.pokemon_image.source=pokemon_img
 			self.ids.viewer.text=f"{name}'s Stats"
+			sm=self.manager.get_screen("PokemonDetails")
+			sm.ids.PokeDetailImg.source=pokemon_img
 		except:
 			self.ids.pokemon_image.source="pokeball.png"
 		#Details=requests.get(f"https://pokeapi.co/api/v2/pokemon/{Pokemon}")
@@ -103,6 +138,8 @@ class FirstWindow(MDScreen):
 		self.ids.search_bar.text=""
 		self.ids.viewer.text="Pokemon"
 		self.ids.pokemon_image.source="pokeball.png"
+		sm=self.manager.get_screen("PokemonDetails")
+		sm.ids.PokeDetailImg.source="pokeball.png"
 	
 class SecondWindow(MDScreen):
 	pass
