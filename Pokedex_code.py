@@ -10,6 +10,7 @@ from pokebase import SpriteResource as pokeimg
 KV="""
 #:import SliverToolbar __main__.SliverToolbar
 
+
 WindowManager:
 	FirstWindow:
 	SecondWindow:
@@ -94,6 +95,184 @@ WindowManager:
             padding: "12dp"
             spacing: "12dp"
             adaptive_height: True
+            MDCard:
+            	size_hint_y: None
+			    height: "650dp"
+			    padding: "4dp"
+			    radius: 12
+			
+			    MDBoxLayout:
+			        orientation: "vertical"
+			        adaptive_height: True
+			        spacing: "6dp"
+			        padding: "12dp", 0, 0, 0
+			        pos_hint: {"center_y": .5}
+			        
+			        MDTopAppBar:
+			        	id:PokeName
+			        	title:"Pokemon"
+			        
+			        MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True
+					    	
+					MDLabel:
+					    id:PokeID
+					    text: "ID : "
+					    font_style: "Button"
+					    bold: True
+					    adaptive_height: True
+					    
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True
+					
+					MDLabel:
+					    id:PokeTypes
+					    text: "TYPE : "
+					    font_style: "Overline"
+					    bold:True
+					    adaptive_height: True
+					    
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True
+					    
+					MDLabel:
+					    id:PokeHeight
+					    text: "HEIGHT : "
+					    font_style: "Button"
+					    bold: True
+					    adaptive_height: True
+					
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True
+					
+					MDLabel:
+					    id:PokeWeight
+					    text: "WEIGHT : "
+					    font_style: "Button"
+					    bold:True
+					    adaptive_height: True
+					    
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True        
+					
+					MDLabel:
+					    id:PokeAbilities
+					    text: "ABILITY : "
+					    font_style: "Overline"
+					    bold:True
+					    adaptive_height: True
+					
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True
+					
+					MDLabel:
+					    id:PokeHP
+					    text: "HP : "
+					    font_style: "Overline"
+					    bold:True
+					    adaptive_height: True
+					 
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True    
+					   
+					MDLabel:
+					    id:PokeAttack
+					    text: "ATTACK : "
+					    font_style: "Button"
+					    bold: True
+					    adaptive_height: True
+					
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True
+					
+					MDLabel:
+					    id:PokeDefence
+					    text: "DEFENCE : "
+					    font_style: "Overline"
+					    bold:True
+					    adaptive_height: True
+					 
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True    
+					     
+					MDLabel:
+					    id:PokeSpecialAttack
+					    text: "SPECIAL ATTACK : "
+					    font_style: "Button"
+					    bold: True
+					    adaptive_height: True
+					
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True
+					
+					MDLabel:
+					    id:PokeSpecialDefence
+					    text: "SPECIAL DEFENCE : "
+					    font_style: "Overline"
+					    bold:True
+					    adaptive_height: True
+					
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True    
+					    
+					MDLabel:
+					    id:PokeSpeed
+					    text: "SPEED : "
+					    font_style: "Button"
+					    bold: True
+					    adaptive_height: True
+					
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True
+					
+					MDLabel:
+					    id:PokeBaseExperience
+					    text: "BASE EXPERIENCE : "
+					    font_style: "Overline"
+					    bold:True
+					    adaptive_height: True
+					
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True
 """
 
 class SliverToolbar(MDTopAppBar):
@@ -135,16 +314,31 @@ class FirstWindow(MDScreen):
 			self.ids.viewer.text=f"{name}'s Stats"
 			sm=self.manager.get_screen("PokemonDetails")
 			sm.ids.PokeDetailImg.source=pokemon_img
+			sm.ids.PokeID.text=f"ID : {pokemon_id}"
+			sm.ids.PokeName.title=name
+			sm.ids.PokeHeight.text=f"HEIGHT : {pokemon.height}"
+			sm.ids.PokeWeight.text=f"WEIGHT : {pokemon.weight}"
+			sm.ids.PokeTypes.text="TYPE : "
+			for t in pokemon.types:
+				sm.ids.PokeTypes.text+=f"\n~ {t.type}"
+			sm.ids.PokeAbilities.text="ABILITIES :- \n"
+			for a in pokemon.abilities:
+				sm.ids.PokeAbilities.text+=f"\n~ {a.ability}"
+			sm.ids.PokeHP.text=f"HP : {pokemon.stats[0].base_stat}"
+			sm.ids.PokeAttack.text=f"ATTACK : {pokemon.stats[1].base_stat}"
+			sm.ids.PokeDefence.text=f"DEFENCE : {pokemon.stats[2].base_stat}"
+			sm.ids.PokeSpecialAttack.text=f"SPECIAL ATTACK : {pokemon.stats[3].base_stat}"
+			sm.ids.PokeSpecialDefence.text=f"SPECIAL DEFENCE : {pokemon.stats[4].base_stat}"
+			sm.ids.PokeSpeed.text=f"SPEED : {pokemon.stats[5].base_stat}"
+			sm.ids.PokeBaseExperience.text=f"BASE EXPERIENCE : {pokemon.base_experience}"
 		except:
 			self.ids.pokemon_image.source="pokeball.png"
-		#Details=requests.get(f"https://pokeapi.co/api/v2/pokemon/{Pokemon}")
-	
 	def ClearWindow(self):
 		self.ids.search_bar.text=""
 		self.ids.viewer.text="Pokemon"
 		self.ids.pokemon_image.source="pokeball.png"
 		sm=self.manager.get_screen("PokemonDetails")
-		sm.ids.PokeDetailImg.source="pokeball.png"
+		sm.ids.PokeDetailImg.source="pokeball.png"		
 	
 class SecondWindow(MDScreen):
 	pass
@@ -159,6 +353,6 @@ class MainApp(MDApp):
 		self.theme_cls.theme_style='Dark' 
 		self.theme_cls.primary_palette='Red'
 		return Builder.load_string(KV)
-		
+
 if __name__=='__main__':
 	MainApp().run()
