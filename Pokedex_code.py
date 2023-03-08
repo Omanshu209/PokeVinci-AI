@@ -273,6 +273,9 @@ WindowManager:
 					    font_style: "Overline"
 					    bold: True
 					    adaptive_height: True
+					    
+<SliverToolbar>:
+	left_action_items:[["arrow-left", lambda x: app.ChangeScreen()]]
 """
 
 class SliverToolbar(MDTopAppBar):
@@ -282,10 +285,6 @@ class SliverToolbar(MDTopAppBar):
         self.shadow_color = (0, 0, 0, 0)
         self.type_height = "medium"
         self.headline_text = "Headline medium"
-        self.left_action_items = [["arrow-left", lambda x: self.ChangeScreen()]]
-        
-    def ChangeScreen(self):
-    	pass
 
 class FirstWindow(MDScreen):
 	
@@ -353,6 +352,9 @@ class MainApp(MDApp):
 		self.theme_cls.theme_style='Dark' 
 		self.theme_cls.primary_palette='Red'
 		return Builder.load_string(KV)
+		
+	def ChangeScreen(self):
+		self.root.current="PokemonLoader"
 
 if __name__=='__main__':
 	MainApp().run()
