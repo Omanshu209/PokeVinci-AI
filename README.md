@@ -20,21 +20,24 @@ The app is built using the following technologies:
 To run the app, you need to have the following software installed on your computer:
 
 > Python 3.8 or later
+> 
 You also need to install the following Python packages:
 
 >kivy
+>
 >kivymd
+>
 >pokebase
 
 You can install them by running the following command in your terminal:
-'''
+```
 pip install kivy kivymd pokebase
-'''
+```
 ## Usage
 To run the app, you need to execute the main.py script located in the root directory of the project. You can do it by running the following command in your terminal:
-'''
+```
 python3 Pokedex_code.py
-'''
+```
 When you run the app, you will see the Pokemon Loader screen. Enter the name or ID of a Pokemon and click the search button to load its information. If the Pokemon exists, you will see its name, image, and other details. Click the Pokemon button to see more details about the selected Pokemon in the Pokemon Details screen.
 
 In the Pokemon Details screen, you can see the same information as in the previous screen but in a more detailed and organized way. Click the back button to return to the Pokemon Loader screen and search for another Pokemon.
