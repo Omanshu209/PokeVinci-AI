@@ -55,7 +55,7 @@ WindowManager:
 			
 			AsyncImage:
 			    id:pokemon_image
-			    source:"pokeball.png"
+			    source:"pokeball.gif"
 			    pos_hint:{"center_x":.5}
 			    allow_stretch:True
     		    
@@ -289,7 +289,7 @@ class SliverToolbar(MDTopAppBar):
 class FirstWindow(MDScreen):
 	
 	def loading_screen(self):
-		self.ids.pokemon_image.source="loading.gif"
+		self.ids.pokemon_image.source="loading.png"
 	
 	def UpdatePokemon(self,Pokemon):
 		id=False
@@ -331,13 +331,13 @@ class FirstWindow(MDScreen):
 			sm.ids.PokeSpeed.text=f"SPEED : {pokemon.stats[5].base_stat}"
 			sm.ids.PokeBaseExperience.text=f"BASE EXPERIENCE : {pokemon.base_experience}"
 		except:
-			self.ids.pokemon_image.source="pokeball.png"
+			self.ids.pokemon_image.source="error.png"
 	def ClearWindow(self):
 		self.ids.search_bar.text=""
 		self.ids.viewer.text="Pokemon"
-		self.ids.pokemon_image.source="pokeball.png"
+		self.ids.pokemon_image.source="pokeball.gif"
 		sm=self.manager.get_screen("PokemonDetails")
-		sm.ids.PokeDetailImg.source="pokeball.png"		
+		sm.ids.PokeDetailImg.source="pokeball.gif"		
 	
 class SecondWindow(MDScreen):
 	pass
@@ -348,7 +348,7 @@ class WindowManager(MDScreenManager):
 class MainApp(MDApp):
 	
 	def build(self):
-		Loader.loading_image = 'loading.gif'
+		Loader.loading_image = 'loading.png'
 		self.theme_cls.theme_style='Dark' 
 		self.theme_cls.primary_palette='Red'
 		return Builder.load_string(KV)
