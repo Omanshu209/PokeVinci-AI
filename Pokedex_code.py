@@ -87,7 +87,7 @@ WindowManager:
                 AsyncImage:
                     id:PokeDetailImg
                     allow_stretch:True
-                    source: "pokeball.png"
+                    source: "pokeball.gif"
 
         MDSliverAppbarContent:
             id: content
