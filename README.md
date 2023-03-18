@@ -2,7 +2,7 @@
 This is a Python-based application that allows users to search for information about different Pokemons. The app has two main screens:
 
 **Pokemon Loader**: This screen allows users to search for a Pokemon by name or ID. When the user enters a valid query and clicks the search button, the app loads the corresponding Pokemon's information, including its image, name, ID, type(s), height, weight, abilities, and stats (HP, Attack, Defense, Special Attack, Special Defense, and Speed).
-![Screenshot_2023-03-09-18-32-37-629](https://user-images.githubusercontent.com/114089324/224038705-e593a756-8590-4d21-9332-becde0536f90.jpeg)
+![Screenshot_2023-03-18-17-42-57-384](https://user-images.githubusercontent.com/114089324/226105428-7a23fb54-cd81-47b9-ae36-5f6589e305a6.jpeg)
 
 **Pokemon Details**: This screen displays the information about the Pokemon selected by the user in the Pokemon Loader screen. The app shows the same information as in the previous screen but in a more detailed and organized way.
 ![Screenshot_2023-03-09-18-34-19-916](https://user-images.githubusercontent.com/114089324/224039139-a0b39841-afb6-4c03-aa82-689ab9b369dd.jpeg)
