@@ -1,0 +1,267 @@
+#:import SliverToolbar __main__.SliverToolbar
+
+WindowManager:
+	FirstWindow:
+	SecondWindow:
+		
+<FirstWindow>:
+	name:"PokemonLoader"
+	
+	MDScreen:
+		
+		MDTextField:
+			id:search_bar
+			mode:'round' 
+			hint_text:"Enter Pokemon's Name/ID"
+			icon_left:'pokeball' 
+			pos_hint:{'center_y':.96}
+			size_hint:.9,None
+			padding:15
+			
+		MDRoundFlatButton:
+			text:'PokeSearch' 
+			pos_hint:{'center_x':.5,'center_y':.89}
+			size_hint:.2,.06
+			on_press:
+				root.loading_screen()
+			on_release:
+				root.UpdatePokemon(root.ids.search_bar.text.lower())
+
+		MDRoundFlatButton:
+			text:'Clear' 
+			pos_hint:{'center_x':.95,'center_y':.96}
+			size_hint:.09,.004
+			on_release:
+				root.ClearWindow()
+		
+		MDCard:
+			size_hint:.95,.72
+			pos_hint:{'center_x':.5,'center_y':.47}
+			elevation:7
+			padding:25
+			spacing:25
+			orientation:'vertical' 
+			
+			AsyncImage:
+			    id:pokemon_image
+			    source:"assets/pokeball.gif"
+			    pos_hint:{"center_x":.5}
+			    allow_stretch:True
+    		    
+    		MDRectangleFlatButton:
+    			id:viewer
+    			text:"Pokemon"
+    			size_hint:.4,.1
+    			pos_hint:{"center_x":.5}
+    			on_release:
+    				app.root.current = "PokemonDetails"
+                	root.manager.transition.direction = "left"
+		
+		MDRectangleFlatButton:
+			text:'D   e   v   e   l   o   p   e   d       B   y       O   m   a   n   s   h   u' 
+			pos_hint:{'center_x':.5,'center_y':0.045}
+			size_hint:1,.05
+			bold:True
+	
+<SecondWindow>:
+	name:"PokemonDetails"
+	MDSliverAppbar:
+        background_color: "2d4a50"
+        toolbar_cls: SliverToolbar()
+
+        MDSliverAppbarHeader:
+
+            MDRelativeLayout:
+
+                AsyncImage:
+                    id:PokeDetailImg
+                    allow_stretch:True
+                    source: "assets/pokeball.gif"
+
+        MDSliverAppbarContent:
+            id: content
+            orientation: "vertical"
+            padding: "12dp"
+            spacing: "12dp"
+            adaptive_height: True
+            MDCard:
+            	size_hint_y: None
+			    height: "650dp"
+			    padding: "4dp"
+			    radius: 12
+			
+			    MDBoxLayout:
+			        orientation: "vertical"
+			        adaptive_height: True
+			        spacing: "6dp"
+			        padding: "12dp", 0, 0, 0
+			        pos_hint: {"center_y": .5}
+			        
+			        MDTopAppBar:
+			        	id:PokeName
+			        	title:"Pokemon"
+			        
+			        MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True
+					    	
+					MDLabel:
+					    id:PokeID
+					    text: "ID : "
+					    font_style: "Button"
+					    bold: True
+					    adaptive_height: True
+					    
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True
+					
+					MDLabel:
+					    id:PokeTypes
+					    text: "TYPE : "
+					    font_style: "Overline"
+					    bold:True
+					    adaptive_height: True
+					    
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True
+					    
+					MDLabel:
+					    id:PokeHeight
+					    text: "HEIGHT : "
+					    font_style: "Button"
+					    bold: True
+					    adaptive_height: True
+					
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True
+					
+					MDLabel:
+					    id:PokeWeight
+					    text: "WEIGHT : "
+					    font_style: "Button"
+					    bold:True
+					    adaptive_height: True
+					    
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True        
+					
+					MDLabel:
+					    id:PokeAbilities
+					    text: "ABILITY : "
+					    font_style: "Overline"
+					    bold:True
+					    adaptive_height: True
+					
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True
+					
+					MDLabel:
+					    id:PokeHP
+					    text: "HP : "
+					    font_style: "Overline"
+					    bold:True
+					    adaptive_height: True
+					 
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True    
+					   
+					MDLabel:
+					    id:PokeAttack
+					    text: "ATTACK : "
+					    font_style: "Button"
+					    bold: True
+					    adaptive_height: True
+					
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True
+					
+					MDLabel:
+					    id:PokeDefence
+					    text: "DEFENCE : "
+					    font_style: "Overline"
+					    bold:True
+					    adaptive_height: True
+					 
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True    
+					     
+					MDLabel:
+					    id:PokeSpecialAttack
+					    text: "SPECIAL ATTACK : "
+					    font_style: "Button"
+					    bold: True
+					    adaptive_height: True
+					
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True
+					
+					MDLabel:
+					    id:PokeSpecialDefence
+					    text: "SPECIAL DEFENCE : "
+					    font_style: "Overline"
+					    bold:True
+					    adaptive_height: True
+					
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True    
+					    
+					MDLabel:
+					    id:PokeSpeed
+					    text: "SPEED : "
+					    font_style: "Button"
+					    bold: True
+					    adaptive_height: True
+					
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True
+					
+					MDLabel:
+					    id:PokeBaseExperience
+					    text: "BASE EXPERIENCE : "
+					    font_style: "Overline"
+					    bold:True
+					    adaptive_height: True
+					
+					MDLabel:
+			        	text: "--------------------"
+					    font_style: "Overline"
+					    bold: True
+					    adaptive_height: True
+					    
+<SliverToolbar>:
+	left_action_items:[["arrow-left", lambda x: app.ChangeScreen()]]
