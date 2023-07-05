@@ -21,15 +21,15 @@ The app is built using the following technologies:
 ## Requirements
 To run the app, you need to have the following software installed on your computer:
 
-> Python 3.8 or later
+> `Python 3`
 > 
 You also need to install the following Python packages:
 
->kivy (v2.0.0)
+> `kivy (v2.0.0)`
 >
->kivymd (v1.1.1)
+> `kivymd (v1.1.1)`
 >
->pokebase (v1.3.0)
+> `pokebase (v1.3.0)`
 
 You can install them by running the following command in your terminal:
 ```
