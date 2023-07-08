@@ -35,7 +35,7 @@ You can install them by running the following command in your terminal:
 pip install kivy==2.0.0 kivymd==1.1.1 pokebase==1.3.0
 ```
 ## Usage
-To run the app, you need to execute the Pokedex_code.py script located in the root directory of the project. You can do it by running the following command in your terminal:
+To run the app, you need to execute the `main.py` script located in the root directory of the project. You can do it by running the following command in your terminal:
 ```
 python3 main.py
 ```
