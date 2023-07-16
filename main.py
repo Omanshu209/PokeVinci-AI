@@ -70,7 +70,7 @@ class FirstWindow(MDScreen):
 			sm.ids.PokeSpeed.text = f"SPEED : {pokemon.stats[5].base_stat}"
 			sm.ids.PokeBaseExperience.text = f"BASE EXPERIENCE : {pokemon.base_experience}"
 			
-		except:
+		except Exception:
 			self.ids.pokemon_image.source = "assets/error.png"
 			
 	def ClearWindow(self):
