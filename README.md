@@ -1,4 +1,4 @@
-# Pokedex
+# PokeVinci
 This is a Python-based application that allows users to `search for information about different Pokemons`. The app has two main screens:
 
 **Pokemon Loader**: This screen allows users to search for a Pokemon by name or ID. When the user enters a valid query and clicks the search button, the app `loads the corresponding Pokemon's information`.
