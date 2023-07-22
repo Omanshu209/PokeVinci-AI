@@ -32,6 +32,10 @@ You also need to install the following Python packages:
 
 You can install them by running the following command in your terminal:
 ```
+pip install -r requirements.txt
+```
+**OR**
+```
 pip install kivy==2.0.0 kivymd==1.1.1 pokebase==1.3.0
 ```
 ## Usage
