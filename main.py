@@ -34,7 +34,7 @@ class FirstWindow(MDScreen):
 		try:
 			pokemon = pb(Pokemon)
 			
-			if id == False:
+			if not id:
 				pokemon_id = pokemon.id
 				name = str(pokemon)[0].upper() + str(pokemon)[1:]
 				
