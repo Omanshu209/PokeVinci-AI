@@ -3,9 +3,9 @@ from kivy.lang import Builder
 from kivymd.uix.screenmanager import MDScreenManager
 from kivy.loader import Loader
 from kivymd.uix.screen import MDScreen
-from pokebase import pokemon as pb
+from requests import get
 from kivymd.uix.toolbar import MDTopAppBar
-from pokebase import SpriteResource as pokeimg
+from json import loads
 
 class SliverToolbar(MDTopAppBar):
     
@@ -20,57 +20,54 @@ class FirstWindow(MDScreen):
 	def loading_screen(self):
 		self.ids.pokemon_image.source = "assets/loading.png"
 	
-	def UpdatePokemon(self,Pokemon):
-		id = False
+	def UpdatePokemon(self, Pokemon):
 		
 		try:
-			pokemon_id = int(Pokemon)
-			Pokemon = int(Pokemon)
-			id = True
+			raw_data = get(f"https://pokeapi.co/api/v2/pokemon/{Pokemon}")
+			data = loads(raw_data.text)
 			
-		except ValueError:
-			pass
-			
-		try:
-			pokemon = pb(Pokemon)
-			
-			if not id:
-				pokemon_id = pokemon.id
-				name = str(pokemon)[0].upper() + str(pokemon)[1:]
+			pokemon_id = data['id']
+			name = str(data['name'])[0].upper() + str(data['name'])[1:]
 				
-			else:
-				pokemon_id = Pokemon
-				name = pokemon.name
-				name = str(name)[0].upper() + str(name)[1:]
-				
-			pokemon_img = pokeimg('pokemon',pokemon_id).url
+			pokemon_img = data['sprites']['front_default']
 			self.ids.pokemon_image.source = pokemon_img
+			
 			self.ids.viewer.text = f"{name}'s Stats"
+			
 			sm = self.manager.get_screen("PokemonDetails")
 			sm.ids.PokeDetailImg.source = pokemon_img
+			
 			sm.ids.PokeID.text = f"ID : {pokemon_id}"
 			sm.ids.PokeName.title = name
-			sm.ids.PokeHeight.text = f"HEIGHT : {pokemon.height}"
-			sm.ids.PokeWeight.text = f"WEIGHT : {pokemon.weight}"
+			sm.ids.PokeHeight.text = f"HEIGHT : {data['height']}"
+			sm.ids.PokeWeight.text = f"WEIGHT : {data['weight']}"
 			sm.ids.PokeTypes.text = "TYPE : "
 			
-			for t in pokemon.types:
-				sm.ids.PokeTypes.text += f"\n~ {t.type}"
+			for t in data['types']:
+				sm.ids.PokeTypes.text += f"\n~ {t['type']['name']}"
 				
 			sm.ids.PokeAbilities.text = "ABILITIES :- \n"
 			
-			for a in pokemon.abilities:
-				sm.ids.PokeAbilities.text += f"\n~ {a.ability}"
-				
-			sm.ids.PokeHP.text = f"HP : {pokemon.stats[0].base_stat}"
-			sm.ids.PokeAttack.text = f"ATTACK : {pokemon.stats[1].base_stat}"
-			sm.ids.PokeDefence.text = f"DEFENCE : {pokemon.stats[2].base_stat}"
-			sm.ids.PokeSpecialAttack.text = f"SPECIAL ATTACK : {pokemon.stats[3].base_stat}"
-			sm.ids.PokeSpecialDefence.text = f"SPECIAL DEFENCE : {pokemon.stats[4].base_stat}"
-			sm.ids.PokeSpeed.text = f"SPEED : {pokemon.stats[5].base_stat}"
-			sm.ids.PokeBaseExperience.text = f"BASE EXPERIENCE : {pokemon.base_experience}"
+			for a in data['abilities']:
+				sm.ids.PokeAbilities.text += f"\n~ {a['ability']['name']}"
 			
-		except Exception:
+			for s in data['stats']:
+				if s['stat']['name'] == 'hp':
+					sm.ids.PokeHP.text = f"HP : {s['base_stat']}"
+				elif s['stat']['name'] == 'attack':
+					sm.ids.PokeAttack.text = f"ATTACK : {s['base_stat']}"
+				elif s['stat']['name'] == 'defense':
+					sm.ids.PokeDefence.text = f"DEFENCE : {s['base_stat']}"
+				elif s['stat']['name'] == 'special-attack':
+					sm.ids.PokeSpecialAttack.text = f"SPECIAL ATTACK : {s['base_stat']}"
+				elif s['stat']['name'] == 'special-defense':
+					sm.ids.PokeSpecialDefence.text = f"SPECIAL DEFENCE : {s['base_stat']}"
+				elif s['stat']['name'] == 'speed':
+					sm.ids.PokeSpeed.text = f"SPEED : {s['base_stat']}"
+			
+			sm.ids.PokeBaseExperience.text = f"BASE EXPERIENCE : {data['base_experience']}"
+			
+		except ZeroDivisionError:
 			self.ids.pokemon_image.source = "assets/error.png"
 			
 	def ClearWindow(self):
