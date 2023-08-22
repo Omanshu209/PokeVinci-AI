@@ -28,7 +28,7 @@ You also need to install the following Python packages:
 >
 > `kivymd (v1.1.1)`
 >
-> `pokebase (v1.3.0)`
+> `requests (v2.28.2)`
 
 You can install them by running the following command in your terminal:
 ```
@@ -36,7 +36,7 @@ pip install -r requirements.txt
 ```
 **OR**
 ```
-pip install kivy==2.0.0 kivymd==1.1.1 pokebase==1.3.0
+pip install kivy==2.0.0 kivymd==1.1.1 requests==2.28.2
 ```
 ## Usage
 To run the app, you need to execute the `main.py` script located in the root directory of the project. You can do it by running the following command in your terminal:
