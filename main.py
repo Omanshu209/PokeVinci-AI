@@ -67,7 +67,7 @@ class FirstWindow(MDScreen):
 			
 			sm.ids.PokeBaseExperience.text = f"BASE EXPERIENCE : {data['base_experience']}"
 			
-		except ZeroDivisionError:
+		except Exception:
 			self.ids.pokemon_image.source = "assets/error.png"
 			
 	def ClearWindow(self):
