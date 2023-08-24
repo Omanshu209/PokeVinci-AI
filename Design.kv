@@ -103,11 +103,10 @@ WindowManager:
 			        	id:PokeName
 			        	title:"Pokemon"
 			        
-			        MDLabel:
-			        	text: "--------------------"
-					    font_style: "Overline"
-					    bold: True
-					    adaptive_height: True
+			        MDProgressBar:
+						value: 100
+						color:(0,0,0,1)
+						size_hint_x : 1
 						
 					MDLabel:
 						id:PokeID
@@ -116,11 +115,10 @@ WindowManager:
 						bold: True
 						adaptive_height: True
 					    
-					MDLabel:
-			        	text: "--------------------"
-					    font_style: "Overline"
-					    bold: True
-					    adaptive_height: True
+					MDProgressBar:
+						value: 100
+						color:(0,0,0,1)
+						size_hint_x : 1
 					
 					MDLabel:
 					    id:PokeTypes
@@ -129,11 +127,10 @@ WindowManager:
 					    bold:True
 					    adaptive_height: True
 					    
-					MDLabel:
-			        	text: "--------------------"
-					    font_style: "Overline"
-					    bold: True
-					    adaptive_height: True
+					MDProgressBar:
+						value: 100
+						color:(0,0,0,1)
+						size_hint_x : 1
 					    
 					MDLabel:
 					    id:PokeHeight
@@ -142,10 +139,10 @@ WindowManager:
 					    bold: True
 					    adaptive_height: True
 					
-					MDLabel:
-			        	text: "--------------------"
-					    bold: True
-					    adaptive_height: True
+					MDProgressBar:
+						value: 100
+						color:(0,0,0,1)
+						size_hint_x : 1
 					
 					MDLabel:
 					    id:PokeWeight
@@ -154,11 +151,10 @@ WindowManager:
 					    bold:True
 					    adaptive_height: True
 					    
-					MDLabel:
-			        	text: "--------------------"
-					    font_style: "Overline"
-					    bold: True
-					    adaptive_height: True        
+					MDProgressBar:
+						value: 100
+						color:(0,0,0,1)
+						size_hint_x : 1
 					
 					MDLabel:
 					    id:PokeAbilities
@@ -167,11 +163,10 @@ WindowManager:
 					    bold:True
 					    adaptive_height: True
 					
-					MDLabel:
-			        	text: "--------------------"
-					    font_style: "Overline"
-					    bold: True
-					    adaptive_height: True
+					MDProgressBar:
+						value: 100
+						color:(0,0,0,1)
+						size_hint_x : 1
 					
 					MDGridLayout:
 						cols:2
@@ -191,7 +186,17 @@ WindowManager:
 						    value: 0
 						    color:(0,1,0,1)
 						    size_hint_x : .8
-						   
+					
+					MDProgressBar:
+						value: 100
+						color:(0,0,0,1)
+						size_hint_x : 1
+					
+					MDGridLayout:
+						cols:2
+						adaptive_height:True
+						spacing: "5dp"
+						
 						MDLabel:
 						    id:PokeAttack
 						    text: "ATTACK : "
@@ -205,6 +210,16 @@ WindowManager:
 						    value: 0
 						    color:(1,0,0,1)
 						    size_hint_x : .8
+					
+					MDProgressBar:
+						value: 100
+						color:(0,0,0,1)
+						size_hint_x : 1
+						
+					MDGridLayout:
+						cols:2
+						adaptive_height:True
+						spacing: "5dp"
 						
 						MDLabel:
 						    id:PokeDefence
@@ -219,7 +234,17 @@ WindowManager:
 						    value: 0
 						    color:(0,0,1,1)
 						    size_hint_x : .8
-						     
+					
+					MDProgressBar:
+						value: 100
+						color:(0,0,0,1)
+						size_hint_x : 1
+					
+					MDGridLayout:
+						cols:2
+						adaptive_height:True
+						spacing: "5dp"
+						 
 						MDLabel:
 						    id:PokeSpecialAttack
 						    text: "SPECIAL ATTACK : "
@@ -233,6 +258,16 @@ WindowManager:
 						    value: 0
 						    color:(1,1,0,1)
 						    size_hint_x : .8
+					
+					MDProgressBar:
+						value: 100
+						color:(0,0,0,1)
+						size_hint_x : 1
+						
+					MDGridLayout:
+						cols:2
+						adaptive_height:True
+						spacing: "5dp"
 						
 						MDLabel:
 						    id:PokeSpecialDefence
@@ -247,7 +282,17 @@ WindowManager:
 						    value: 0
 						    color:(0,1,1,1)
 						    size_hint_x : .8
-						    
+					
+					MDProgressBar:
+						value: 100
+						color:(0,0,0,1)
+						size_hint_x : 1
+					
+					MDGridLayout:
+						cols:2
+						adaptive_height:True
+						spacing: "5dp"
+						 
 						MDLabel:
 						    id:PokeSpeed
 						    text: "SPEED : "
@@ -261,12 +306,11 @@ WindowManager:
 						    value: 0
 						    color:(1,1,1,1)
 						    size_hint_x : .8
-						
-					MDLabel:
-			        	text: "--------------------"
-					    font_style: "Overline"
-					    bold: True
-					    adaptive_height: True
+					
+					MDProgressBar:
+						value: 100
+						color:(0,0,0,1)
+						size_hint_x : 1
 					
 					MDLabel:
 						id:PokeBaseExperience
@@ -275,11 +319,10 @@ WindowManager:
 						bold:True
 						adaptive_height: True
 					
-					MDLabel:
-			        	text: "--------------------"
-					    font_style: "Overline"
-					    bold: True
-					    adaptive_height: True
+					MDProgressBar:
+						value: 100
+						color:(0,0,0,1)
+						size_hint_x : 1
 					    
 <SliverToolbar>:
 	left_action_items:[["arrow-left", lambda x: app.ChangeScreen()]]
