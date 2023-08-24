@@ -72,10 +72,11 @@ WindowManager:
         MDSliverAppbarHeader:
 
             MDRelativeLayout:
-
+                	
                 AsyncImage:
                     id:PokeDetailImg
                     allow_stretch:True
+                    size_hint:(1,1)
                     source: "assets/pokeball.gif"
 
         MDSliverAppbarContent:
@@ -84,16 +85,17 @@ WindowManager:
             padding: "12dp"
             spacing: "12dp"
             adaptive_height: True
+            
             MDCard:
             	size_hint_y: None
-			    height: "650dp"
+			    height: "675dp"
 			    padding: "4dp"
 			    radius: 12
 			
 			    MDBoxLayout:
 			        orientation: "vertical"
 			        adaptive_height: True
-			        spacing: "6dp"
+			        spacing: "12dp"
 			        padding: "12dp", 0, 0, 0
 			        pos_hint: {"center_y": .5}
 			        
@@ -106,13 +108,13 @@ WindowManager:
 					    font_style: "Overline"
 					    bold: True
 					    adaptive_height: True
-					    	
+						
 					MDLabel:
-					    id:PokeID
-					    text: "ID : "
-					    font_style: "Button"
-					    bold: True
-					    adaptive_height: True
+						id:PokeID
+						text : "ID : "
+						font_style: "Button"
+						bold: True
+						adaptive_height: True
 					    
 					MDLabel:
 			        	text: "--------------------"
@@ -142,7 +144,6 @@ WindowManager:
 					
 					MDLabel:
 			        	text: "--------------------"
-					    font_style: "Overline"
 					    bold: True
 					    adaptive_height: True
 					
@@ -172,90 +173,107 @@ WindowManager:
 					    bold: True
 					    adaptive_height: True
 					
-					MDLabel:
-					    id:PokeHP
-					    text: "HP : "
-					    font_style: "Overline"
-					    bold:True
-					    adaptive_height: True
-					 
+					MDGridLayout:
+						cols:2
+						adaptive_height:True
+						spacing: "5dp"
+						
+						MDLabel:
+						    id:PokeHP
+						    text: "HP : "
+						    font_style: "Overline"
+						    size_hint_x:.1
+						    bold:True
+						    adaptive_height: True
+						    
+						MDProgressBar:
+						    id:HP_bar
+						    value: 0
+						    color:(0,1,0,1)
+						    size_hint_x : .8
+						   
+						MDLabel:
+						    id:PokeAttack
+						    text: "ATTACK : "
+						    font_style: "Button"
+						    size_hint_x:.1
+						    bold: True
+						    adaptive_height: True
+						    
+						MDProgressBar:
+						    id:Attack_bar
+						    value: 0
+						    color:(1,0,0,1)
+						    size_hint_x : .8
+						
+						MDLabel:
+						    id:PokeDefence
+						    text: "DEFENCE : "
+						    font_style: "Overline"
+						    size_hint_x:.1
+						    bold:True
+						    adaptive_height: True
+						    
+						MDProgressBar:
+						    id:Defence_bar
+						    value: 0
+						    color:(0,0,1,1)
+						    size_hint_x : .8
+						     
+						MDLabel:
+						    id:PokeSpecialAttack
+						    text: "SPECIAL ATTACK : "
+						    font_style: "Button"
+						    size_hint_x:.1
+						    bold: True
+						    adaptive_height: True
+						
+						MDProgressBar:
+						    id:SpAttack_bar
+						    value: 0
+						    color:(1,1,0,1)
+						    size_hint_x : .8
+						
+						MDLabel:
+						    id:PokeSpecialDefence
+						    text: "SPECIAL DEFENCE : "
+						    font_style: "Overline"
+						    size_hint_x:.1
+						    bold:True
+						    adaptive_height: True
+						    
+						MDProgressBar:
+						    id:SpDefence_bar
+						    value: 0
+						    color:(0,1,1,1)
+						    size_hint_x : .8
+						    
+						MDLabel:
+						    id:PokeSpeed
+						    text: "SPEED : "
+						    font_style: "Button"
+						    size_hint_x:.1
+						    bold: True
+						    adaptive_height: True
+						    
+						MDProgressBar:
+						    id:Speed_bar
+						    value: 0
+						    color:(1,1,1,1)
+						    size_hint_x : .8
+						
 					MDLabel:
 			        	text: "--------------------"
 					    font_style: "Overline"
 					    bold: True
-					    adaptive_height: True    
-					   
-					MDLabel:
-					    id:PokeAttack
-					    text: "ATTACK : "
-					    font_style: "Button"
-					    bold: True
 					    adaptive_height: True
 					
 					MDLabel:
-			        	text: "--------------------"
-					    font_style: "Overline"
-					    bold: True
-					    adaptive_height: True
-					
-					MDLabel:
-					    id:PokeDefence
-					    text: "DEFENCE : "
-					    font_style: "Overline"
-					    bold:True
-					    adaptive_height: True
-					 
-					MDLabel:
-			        	text: "--------------------"
-					    font_style: "Overline"
-					    bold: True
-					    adaptive_height: True    
-					     
-					MDLabel:
-					    id:PokeSpecialAttack
-					    text: "SPECIAL ATTACK : "
-					    font_style: "Button"
-					    bold: True
-					    adaptive_height: True
-					
-					MDLabel:
-			        	text: "--------------------"
-					    font_style: "Overline"
-					    bold: True
-					    adaptive_height: True
-					
-					MDLabel:
-					    id:PokeSpecialDefence
-					    text: "SPECIAL DEFENCE : "
-					    font_style: "Overline"
-					    bold:True
-					    adaptive_height: True
-					
-					MDLabel:
-			        	text: "--------------------"
-					    font_style: "Overline"
-					    bold: True
-					    adaptive_height: True    
-					    
-					MDLabel:
-					    id:PokeSpeed
-					    text: "SPEED : "
-					    font_style: "Button"
-					    bold: True
-					    adaptive_height: True
-					
-					MDLabel:
-			        	text: "--------------------"
-					    font_style: "Overline"
-					    bold: True
-					    adaptive_height: True
-					
-					MDLabel:
-					    id:PokeBaseExperience
-					    text: "BASE EXPERIENCE : "
-					    font_style: "Overline"
-					    bold:True
-					    adaptive_height: True
+						id:PokeBaseExperience
+						text: "BASE EXPERIENCE : "
+						font_style: "Overline"
+						bold:True
+						adaptive_height: True
 					
 					MDLabel:
 			        	text: "--------------------"

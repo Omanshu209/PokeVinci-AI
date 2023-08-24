@@ -53,17 +53,23 @@ class FirstWindow(MDScreen):
 			
 			for s in data['stats']:
 				if s['stat']['name'] == 'hp':
-					sm.ids.PokeHP.text = f"HP : {s['base_stat']}"
+					sm.ids.PokeHP.text = f"ID : {s['base_stat']}"
+					sm.ids.HP_bar.value = s['base_stat'] / 200 * 100
 				elif s['stat']['name'] == 'attack':
 					sm.ids.PokeAttack.text = f"ATTACK : {s['base_stat']}"
+					sm.ids.Attack_bar.value = s['base_stat'] / 200 * 100
 				elif s['stat']['name'] == 'defense':
 					sm.ids.PokeDefence.text = f"DEFENCE : {s['base_stat']}"
+					sm.ids.Defence_bar.value = s['base_stat'] / 200 * 100
 				elif s['stat']['name'] == 'special-attack':
 					sm.ids.PokeSpecialAttack.text = f"SPECIAL ATTACK : {s['base_stat']}"
+					sm.ids.SpAttack_bar.value = s['base_stat'] / 200 * 100
 				elif s['stat']['name'] == 'special-defense':
 					sm.ids.PokeSpecialDefence.text = f"SPECIAL DEFENCE : {s['base_stat']}"
+					sm.ids.SpDefence_bar.value = s['base_stat'] / 200 * 100
 				elif s['stat']['name'] == 'speed':
 					sm.ids.PokeSpeed.text = f"SPEED : {s['base_stat']}"
+					sm.ids.Speed_bar.value = s['base_stat'] / 200 * 100
 			
 			sm.ids.PokeBaseExperience.text = f"BASE EXPERIENCE : {data['base_experience']}"
 			
