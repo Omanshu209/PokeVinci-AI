@@ -53,7 +53,7 @@ class FirstWindow(MDScreen):
 			
 			for s in data['stats']:
 				if s['stat']['name'] == 'hp':
-					sm.ids.PokeHP.text = f"ID : {s['base_stat']}"
+					sm.ids.PokeHP.text = f"HP : {s['base_stat']}"
 					sm.ids.HP_bar.value = s['base_stat'] / 200 * 100
 				elif s['stat']['name'] == 'attack':
 					sm.ids.PokeAttack.text = f"ATTACK : {s['base_stat']}"
