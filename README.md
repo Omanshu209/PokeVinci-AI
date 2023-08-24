@@ -5,7 +5,7 @@ This is a Python-based application that allows users to `search for information 
 ![Screenshot_2023-03-18-17-42-57-384](https://user-images.githubusercontent.com/114089324/226105428-7a23fb54-cd81-47b9-ae36-5f6589e305a6.jpeg)
 
 **Pokemon Details**: This screen `displays the information about the Pokemon` selected by the user in the Pokemon Loader screen including its `image`, `name`, `ID`, `type(s)`, `height`, `weight`, `abilities`, and `stats` (HP, Attack, Defense, Special Attack, Special Defense, and Speed). The app shows the same information as in the previous screen but in a more detailed and organized way.
-![Screenshot_2023-03-09-18-34-19-916](https://user-images.githubusercontent.com/114089324/224039139-a0b39841-afb6-4c03-aa82-689ab9b369dd.jpeg)
+![Screenshot_2023-08-24-19-21-56-376](https://github.com/Omanshu209/PokeVinci/assets/114089324/aa7cdf20-7dcd-40e7-983c-80ee893f1010)
 
 ## Technologies Used
 The app is built using the following technologies:
