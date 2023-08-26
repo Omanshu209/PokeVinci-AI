@@ -1,7 +1,10 @@
-<h1>
-  PokeVinci
-  <img src = "https://github.com/Omanshu209/PokeVinci/assets/114089324/77dca620-0daf-4153-b3d4-ced19028f7af" width = "40" />
-</h1>
+<div align = "center">
+  <h1>
+    <img src = "https://github.com/Omanshu209/PokeVinci/assets/114089324/77dca620-0daf-4153-b3d4-ced19028f7af" width = "40" />
+    PokeVinci
+    <img src = "https://github.com/Omanshu209/PokeVinci/assets/114089324/77dca620-0daf-4153-b3d4-ced19028f7af" width = "40" />
+  </h1>
+</div>
 
 This is a Python-based application that allows users to `search for information about different Pokemons`. The app has two main screens:
 
