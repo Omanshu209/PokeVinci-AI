@@ -1,4 +1,6 @@
-Kivy==2.0.0
+kivy==2.0.0
 kivymd==1.1.1
 requests==2.28.2
 pillow==10.1.0
+torch==1.9.1
+torchvision==0.10.0
