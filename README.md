@@ -44,7 +44,7 @@ You also need to install the following Python packages:
 >
 > `torch (v1.9.1)`
 >
-> `torchvision(v0.10.0)`
+> `torchvision (v0.10.0)`
 >
 > `pillow`
 
