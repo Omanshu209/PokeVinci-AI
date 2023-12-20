@@ -6,13 +6,15 @@
   </h1>
 </div>
 
-This is a Python-based application that allows users to `search for information about different Pokemons`. The app has two main screens:
+This is a Python-based application that allows users to `search for information about different Pokemons`. The app has three main screens:
 
-**Pokemon Loader**: This screen allows users to search for a Pokemon by name or ID. When the user enters a valid query and clicks the search button, the app `loads the corresponding Pokemon's information`.
-<img src = "https://user-images.githubusercontent.com/114089324/226105428-7a23fb54-cd81-47b9-ae36-5f6589e305a6.jpeg" width = "500" align = "left"/>
+**Search**: This screen allows users to search for a Pokemon by name or ID. When the user enters a valid query and clicks the search button, the app `loads the corresponding Pokemon's information`.
+<img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/060c97f2-dfd4-4441-abe3-15fb9caa1434" width = "500" align = "left"/>
 
-**Pokemon Details**: This screen `displays the information about the Pokemon` selected by the user in the Pokemon Loader screen including its `image`, `name`, `ID`, `type(s)`, `height`, `weight`, `abilities`, and `stats` (HP, Attack, Defense, Special Attack, Special Defense, and Speed). The app shows the same information as in the previous screen but in a more detailed and organized way.
-<img src = "https://github.com/Omanshu209/PokeVinci/assets/114089324/4d672402-9cc2-4fb0-88e7-8284106f455b" width = "500" align = "right"/>
+**Stats**: This screen `displays the information about the Pokemon` selected by the user in the Pokemon Loader screen including its `image`, `name`, `ID`, `type(s)`, `height`, `weight`, `abilities`, and `stats` (HP, Attack, Defense, Special Attack, Special Defense, and Speed). The app shows the same information as in the previous screen but in a more detailed and organized way.
+<img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/63604fd5-b916-4ce5-a9a4-f9e4e533b4ce" width = "500" align = "right"/>
+
+**AI**: will update soon........why not check it out by yourself?
 
 ## Technologies Used
 The app is built using the following technologies:
@@ -22,6 +24,8 @@ The app is built using the following technologies:
 **Kivy**: A free and open-source Python framework for creating multi-touch applications with a natural user interface (NUI).
 
 **KivyMD**: A collection of Material Design compliant widgets for Kivy, a Python framework for building multi-touch applications.
+
+**PyTorch**
 
 **PokeAPI**: A RESTful API that provides access to data about Pokemon creatures from the Pokemon video game franchise.
 
@@ -36,6 +40,12 @@ You also need to install the following Python packages:
 > `kivymd (v1.1.1)`
 >
 > `requests (v2.28.2)`
+>
+> `torch`
+>
+> `torchvision`
+>
+> `pillow`
 
 You can install them by running the following command in your terminal:
 ```
@@ -43,16 +53,16 @@ pip install -r requirements.txt
 ```
 **OR**
 ```
-pip install kivy==2.0.0 kivymd==1.1.1 requests==2.28.2
+pip install kivy==2.0.0 kivymd==1.1.1 requests==2.28.2 torch torchvision pillow
 ```
 ## Usage
 To run the app, you need to execute the `main.py` script located in the root directory of the project. You can do it by running the following command in your terminal:
 ```
 python3 main.py
 ```
-When you run the app, you will see the Pokemon Loader screen. `Enter` the name or ID of a Pokemon and click the `search` button to `load` its information. If the Pokemon exists, you will see its name, image, and other details. `Click` the Pokemon button to see more details about the selected Pokemon in the Pokemon Details screen.
+When you run the app, you will see the *Search* screen. `Enter` the name or ID of a Pokemon and click the `PokeSearch` button to `load` its information. If the Pokemon exists, you will see its name, image, and other details. `Click` the Pokemon icon to see more details about the selected Pokemon in the *Stats* screen.
 
-In the Pokemon Details screen, you can see the same information as in the previous screen but in a more detailed and organized way. Click the back button to return to the Pokemon Loader screen and search for another Pokemon.
+In the *Stats* screen, you can see the same information as in the previous screen but in a more detailed and organized way.
 
 ## Credits
-This app was developed by **Omanshu**.
+The app and AI were developed by **Omanshu**.
