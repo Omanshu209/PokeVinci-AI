@@ -15,6 +15,7 @@ This is a Python-based application that allows users to `search for information 
 <img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/63604fd5-b916-4ce5-a9a4-f9e4e533b4ce" width = "500" align = "right"/>
 
 **AI**: will update soon........why not check it out by yourself?
+<img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/980eaa00-c135-441d-ab94-de1a01529c86" width = "550" align = "left"/>
 
 ## Technologies Used
 The app is built using the following technologies:
@@ -25,7 +26,7 @@ The app is built using the following technologies:
 
 **KivyMD**: A collection of Material Design compliant widgets for Kivy, a Python framework for building multi-touch applications.
 
-**PyTorch**
+**PyTorch**:........
 
 **PokeAPI**: A RESTful API that provides access to data about Pokemon creatures from the Pokemon video game franchise.
 
