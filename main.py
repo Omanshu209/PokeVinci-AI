@@ -35,9 +35,14 @@ class MainApp(MDApp):
 			
 			pokemon_id = data['id']
 			name = str(data['name'])[0].upper() + str(data['name'])[1:]
-				
-			pokemon_img = data['sprites']['front_default']
-			self.root.ids.pokemon_image.source = pokemon_img
+			
+			try:
+				pokemon_img = f"assets/Pokemon_Images_Shiny/{pokemon_id}.png"
+				self.root.ids.pokemon_image.source = pokemon_img
+			
+			except Exception:
+				pokemon_img = data['sprites']['front_default']
+				self.root.ids.pokemon_image.source = pokemon_img
 			
 			self.root.ids.viewer.text = name
 			self.root.ids.PokeDetailImg.source = pokemon_img
