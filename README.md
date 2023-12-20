@@ -42,9 +42,9 @@ You also need to install the following Python packages:
 >
 > `requests (v2.28.2)`
 >
-> `torch`
+> `torch (v1.9.1)`
 >
-> `torchvision`
+> `torchvision(v0.10.0)`
 >
 > `pillow`
 
@@ -54,7 +54,7 @@ pip install -r requirements.txt
 ```
 **OR**
 ```
-pip install kivy==2.0.0 kivymd==1.1.1 requests==2.28.2 torch torchvision pillow
+pip install kivy==2.0.0 kivymd==1.1.1 requests==2.28.2 torch==1.9.1 torchvision==0.10.0 pillow
 ```
 ## Usage
 To run the app, you need to execute the `main.py` script located in the root directory of the project. You can do it by running the following command in your terminal:
