@@ -26,7 +26,9 @@ The app is built using the following technologies:
 
 **KivyMD**: A collection of Material Design compliant widgets for Kivy, a Python framework for building multi-touch applications.
 
-**PyTorch**:........
+**PyTorch**: An open-source deep learning framework.
+
+**ResNet18**: A specific neural network architecture within PyTorch, renowned for its effectiveness in image recognition tasks with its 18-layer deep structure.
 
 **PokeAPI**: A RESTful API that provides access to data about Pokemon creatures from the Pokemon video game franchise.
 
