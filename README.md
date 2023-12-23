@@ -14,7 +14,7 @@ This is a Python-based application that allows users to `search for information 
 **Stats**: This screen `displays the information about the Pokemon` selected by the user in the Pokemon Loader screen including its `image`, `name`, `ID`, `type(s)`, `height`, `weight`, `abilities`, and `stats` (HP, Attack, Defense, Special Attack, Special Defense, and Speed). The app shows the same information as in the previous screen but in a more detailed and organized way.
 <img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/63604fd5-b916-4ce5-a9a4-f9e4e533b4ce" width = "500" align = "right"/>
 
-**AI**: The AI section of this app leverages `advanced image classification` techniques to `predict Pokemon` species from images. Capture the essence of your `surroundings`, and let the AI unveil the Pokemon that resides within your photos. The application's intuitive interface makes it easy for both Pokemon enthusiasts and AI enthusiasts to dive into a seamless and magical experience.
+**AI**: The AI section of this app leverages `advanced image classification` techniques to `predict generation 1 pokemon` species from images. Capture the essence of your `surroundings`, and let the AI unveil the Pokemon that resides within your photos. The application's intuitive interface makes it easy for both Pokemon enthusiasts and AI enthusiasts to dive into a seamless and magical experience.
 <img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/980eaa00-c135-441d-ab94-de1a01529c86" width = "550" align = "left"/>
 
 ## Technologies Used
