@@ -9,7 +9,7 @@
 This is a Python-based application that allows users to `search for information about different Pokemons`. The app has three main screens:
 
 **Search**: This screen allows users to search for a Pokemon by name or ID. When the user enters a valid query and clicks the search button, the app `loads the corresponding Pokemon's information`.
-<img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/060c97f2-dfd4-4441-abe3-15fb9caa1434" width = "500" align = "left"/>
+<img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/57062527-a68f-4dd8-8355-2ebd3d5b202b" width = "500" align = "left"/>
 
 **Stats**: This screen `displays the information about the Pokemon` selected by the user in the Pokemon Loader screen including its `image`, `name`, `ID`, `type(s)`, `height`, `weight`, `abilities`, and `stats` (HP, Attack, Defense, Special Attack, Special Defense, and Speed). The app shows the same information as in the previous screen but in a more detailed and organized way.
 <img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/63604fd5-b916-4ce5-a9a4-f9e4e533b4ce" width = "500" align = "right"/>
