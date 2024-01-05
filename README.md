@@ -6,7 +6,7 @@
   </h1>
 </div>
 
-This is a Python-based application that allows users to `search for information about different Pokemons`. The app has three main screens:
+This is a Python-based application that allows users to `search for information about different Pokemons`. The app has four main screens:
 
 **Search**: This screen allows users to search for a Pokemon by name or ID. When the user enters a valid query and clicks the search button, the app `loads the corresponding Pokemon's information`.
 <img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/3aff2e22-6f2d-4b9b-b838-debd7a499567" width = "500" align = "left"/>
@@ -16,6 +16,9 @@ This is a Python-based application that allows users to `search for information 
 
 **AI**: The AI section of this app leverages `advanced image classification` techniques to `predict generation 1 pokemon` species from images. Capture the essence of your `surroundings`, and let the AI unveil the Pokemon that resides within your photos. The application's intuitive interface makes it easy for both Pokemon enthusiasts and AI enthusiasts to dive into a seamless and magical experience.
 <img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/980eaa00-c135-441d-ab94-de1a01529c86" width = "550" align = "left"/>
+
+**Favourites**: The Favourites section of this app allows the users the view their `favourite pokemons` in an organised way. A pokemon can be added in the Favourites section by clicking on the `star icon` in the `Search screen`.
+<img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/e82af987-178f-4299-b0f9-8c426cf1c2cf" width = "500" align = "right"/>
 
 ## Technologies Used
 The app is built using the following technologies:
@@ -31,8 +34,6 @@ The app is built using the following technologies:
 **ResNet18**: A specific neural network architecture within PyTorch, renowned for its effectiveness in image recognition tasks with its 18-layer deep structure.
 
 **PokeAPI**: A RESTful API that provides access to data about Pokemon creatures from the Pokemon video game franchise.
-
-<img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/e82af987-178f-4299-b0f9-8c426cf1c2cf" width = "500" align = "right"/>
 
 ## Requirements
 To run the app, you need to have the following software installed on your computer:
