@@ -6,6 +6,8 @@ from kivymd.uix.toolbar import MDTopAppBar
 from json import loads
 from PIL import Image
 from Deep_Learning.PokemonClassifier import PokemonClassifier
+from kivymd.uix.imagelist.imagelist import MDSmartTile
+from kivymd.uix.label.label import MDLabel
 
 classifier = PokemonClassifier(model_path = "Deep_Learning/Model/PokemonClassifier_CNN_Model.pt")
 
@@ -24,6 +26,72 @@ class MainApp(MDApp):
 		self.theme_cls.theme_style = 'Dark' 
 		self.theme_cls.primary_palette = 'Red'
 		return Builder.load_file("Design.kv")
+	
+	def add_fav_pokemon(self, pokemon_id, pokemon_name):
+		self.root.ids.library.add_widget(
+			MDSmartTile(
+				MDLabel(
+					text = pokemon_name.capitalize(), 
+					bold = True,
+					color = (241 / 255, 6 / 255, 11 / 255, 1)
+				), 
+				
+				radius = 24, 
+				box_radius = [0, 0, 24, 24], 
+				box_color = (1, 1, 1, 0.2), 
+				source = f"assets/Pokemon_Images_Shiny/{pokemon_id}.png", 
+				size_hint = (0.2, 0.2)
+			)
+		)
+	
+	def update_library(self):
+		self.root.ids.library.clear_widgets()
+		
+		with open("assets/favourite_pokemons.txt", 'r') as file:
+			contents = file.read().split(',')
+		
+		if len(contents) != 0 and contents != ['']:
+			for content in contents:
+				raw_data = get(f"https://pokeapi.co/api/v2/pokemon/{content}")
+				data = loads(raw_data.text)
+				name = str(data['name']).capitalize()
+				self.add_fav_pokemon(content, name)
+	
+	def on_start(self):
+		self.update_library()
+	
+	def star(self):
+		if self.root.ids.star_button.icon == "cards-heart-outline" and self.root.ids.viewer.text != "Pokemon":
+			with open("assets/favourite_pokemons.txt", "r+") as file:
+				contents = file.read()
+				
+				if contents != "":
+					file.write(',' + self.root.ids.PokeID.text[5:])
+				
+				else:
+					file.write(self.root.ids.PokeID.text[5:])
+			
+			self.root.ids.star_button.icon = "cards-heart"
+		
+		elif self.root.ids.viewer.text != "Pokemon":
+			with open("assets/favourite_pokemons.txt", 'r') as file:
+				contents = file.read().split(',')
+			
+			if self.root.ids.PokeID.text[5:] in contents:
+				contents.remove(self.root.ids.PokeID.text[5:])
+			
+			if len(contents) != 0:
+				new_contents = contents[0]
+				for content in contents[1:]:
+					new_contents += ',' + content
+			
+			else:
+				new_contents = ""
+			
+			with open("assets/favourite_pokemons.txt", 'w') as file:
+				file.write(new_contents)
+			
+			self.root.ids.star_button.icon = "cards-heart-outline"
 	
 	def loading_screen(self):
 		self.root.ids.pokemon_image.source = "assets/loading.png"
@@ -83,6 +151,20 @@ class MainApp(MDApp):
 			
 			self.root.ids.PokeBaseExperience.text = f"BASE EXPERIENCE : {data['base_experience']}"
 			
+			with open("assets/favourite_pokemons.txt", 'r') as file:
+				contents = file.read().split(',')
+			
+			fav_pokemon = False
+			
+			if len(contents) != 0 and contents != ['']:
+				for content in contents:
+					if int(content) == pokemon_id:
+						self.root.ids.star_button.icon = "cards-heart"
+						fav_pokemon = True
+			
+			if not fav_pokemon:
+				self.root.ids.star_button.icon = "cards-heart-outline"
+			
 		except Exception:
 			self.root.ids.pokemon_image.source = "assets/error.png"
 			
@@ -90,8 +172,8 @@ class MainApp(MDApp):
 		self.root.ids.search_bar.text = ""
 		self.root.ids.viewer.text = "Pokemon"
 		self.root.ids.pokemon_image.source = "assets/pokeball.gif"
-		#sm = self.manager.get_screen("PokemonDetails")
 		self.root.ids.PokeDetailImg.source = "assets/pokeball.gif"
+		self.root.ids.star_button.icon = "cards-heart-outline"
 	
 	def capture_image(self):
 		self.root.ids.camera.export_to_png("assets/clicked_image.png")

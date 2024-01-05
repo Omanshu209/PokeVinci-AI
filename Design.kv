@@ -41,12 +41,21 @@ MDBottomNavigation:
 				elevation:7
 				padding:25
 				spacing:25
-				orientation:'vertical' 
+				orientation:"vertical"
+				
+				MDIconButton:
+					id: star_button
+					icon: "cards-heart-outline"
+					size_hint: .05, .05
+					pos_hint: {"center_x": .92}
+					on_press:
+						app.star()
+						app.update_library()
 				
 				AsyncImage:
 				    id:pokemon_image
 				    source:"assets/pokeball.gif"
-				    pos_hint:{"center_x":.5}
+				    pos_hint:{"center_x": .5}
 				    allow_stretch:True
 	    		    
 	    		MDRectangleFlatButton:
@@ -352,6 +361,23 @@ MDBottomNavigation:
 				pos_hint: {'center_x':.5}
 				size_hint: 0.6,.15
 				bold: True
+	
+	MDBottomNavigationItem:
+		name : "library"
+		text : "Favourites"
+		icon : "cards-heart"
+		
+		MDScrollView:
+			do_scroll_y: True
+			
+			MDGridLayout:
+				id: library
+				cols: 2
+				row_default_height: (self.width - self.cols * self.spacing[0]) / self.cols
+				row_force_default: True
+				adaptive_height: True
+				padding: dp(10), dp(10)
+				spacing: dp(10)
 						    
 <SliverToolbar>:
 	left_action_items: []
