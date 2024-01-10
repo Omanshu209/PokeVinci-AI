@@ -1,3 +1,4 @@
+from os import path
 from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.loader import Loader
@@ -104,11 +105,11 @@ class MainApp(MDApp):
 			pokemon_id = data['id']
 			name = str(data['name'])[0].upper() + str(data['name'])[1:]
 			
-			try:
+			if path.exists(f"assets/Pokemon_Images_Shiny/{pokemon_id}.png"):
 				pokemon_img = f"assets/Pokemon_Images_Shiny/{pokemon_id}.png"
 				self.root.ids.pokemon_image.source = pokemon_img
 			
-			except Exception:
+			else:
 				pokemon_img = data['sprites']['front_default']
 				self.root.ids.pokemon_image.source = pokemon_img
 			
