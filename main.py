@@ -136,25 +136,18 @@ class MainApp(MDApp):
 			for a in data['abilities']:
 				self.root.ids.PokeAbilities.text += f"\n~ {a['ability']['name']}"
 			
-			for s in data['stats']:
-				if s['stat']['name'] == 'hp':
-					self.root.ids.PokeHP.text = f"HP : {s['base_stat']}"
-					self.root.ids.HP_bar.value = s['base_stat'] / 200 * 100
-				elif s['stat']['name'] == 'attack':
-					self.root.ids.PokeAttack.text = f"ATTACK : {s['base_stat']}"
-					self.root.ids.Attack_bar.value = s['base_stat'] / 200 * 100
-				elif s['stat']['name'] == 'defense':
-					self.root.ids.PokeDefence.text = f"DEFENCE : {s['base_stat']}"
-					self.root.ids.Defence_bar.value = s['base_stat'] / 200 * 100
-				elif s['stat']['name'] == 'special-attack':
-					self.root.ids.PokeSpecialAttack.text = f"SPECIAL ATTACK : {s['base_stat']}"
-					self.root.ids.SpAttack_bar.value = s['base_stat'] / 200 * 100
-				elif s['stat']['name'] == 'special-defense':
-					self.root.ids.PokeSpecialDefence.text = f"SPECIAL DEFENCE : {s['base_stat']}"
-					self.root.ids.SpDefence_bar.value = s['base_stat'] / 200 * 100
-				elif s['stat']['name'] == 'speed':
-					self.root.ids.PokeSpeed.text = f"SPEED : {s['base_stat']}"
-					self.root.ids.Speed_bar.value = s['base_stat'] / 200 * 100
+			for stat in data['stats']:
+				stat_name = stat['stat']['name']
+				base_stat = stat['base_stat']
+				
+				if stat_name in ["hp", "attack", "defense", "speed"]:
+					self.root.ids[f"Poke{stat_name.capitalize()}"].text = f"{stat_name.upper()} : {base_stat}"
+					self.root.ids[f"{stat_name.capitalize()}_bar"].value = base_stat /200 * 100
+				
+				elif stat_name in ["special-attack", "special-defense"]:
+					stat_type = stat_name.split('-')[1]
+					self.root.ids[f"PokeSpecial{stat_type.capitalize()}"].text = f"SPECIAL {stat_type.upper()} : {base_stat}"
+					self.root.ids[f"Sp{stat_type.capitalize()}_bar"].value = base_stat /200 * 100
 			
 			self.root.ids.PokeBaseExperience.text = f"BASE EXPERIENCE : {data['base_experience']}"
 			
