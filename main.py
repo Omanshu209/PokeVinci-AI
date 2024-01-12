@@ -28,7 +28,13 @@ class MainApp(MDApp):
 		self.theme_cls.primary_palette = 'Red'
 		return Builder.load_file("Design.kv")
 	
-	def add_fav_pokemon(self, pokemon_id, pokemon_name):
+	def add_fav_pokemon(self, pokemon_id, pokemon_name, web_source):
+		if path.exists(f"assets/Pokemon_Images_Shiny/{pokemon_id}.png"):
+			source = f"assets/Pokemon_Images_Shiny/{pokemon_id}.png"
+		
+		else:
+			source = web_source
+		
 		self.root.ids.library.add_widget(
 			MDSmartTile(
 				MDLabel(
@@ -40,7 +46,7 @@ class MainApp(MDApp):
 				radius = 24, 
 				box_radius = [0, 0, 24, 24], 
 				box_color = (1, 1, 1, 0.2), 
-				source = f"assets/Pokemon_Images_Shiny/{pokemon_id}.png", 
+				source = source, 
 				size_hint = (0.2, 0.2)
 			)
 		)
@@ -56,7 +62,7 @@ class MainApp(MDApp):
 				raw_data = get(f"https://pokeapi.co/api/v2/pokemon/{content}")
 				data = loads(raw_data.text)
 				name = str(data['name']).capitalize()
-				self.add_fav_pokemon(content, name)
+				self.add_fav_pokemon(content, name, data['sprites']['front_default'])
 	
 	def on_start(self):
 		self.update_library()
