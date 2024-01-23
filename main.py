@@ -26,6 +26,7 @@ class MainApp(MDApp):
 		Loader.loading_image = 'assets/loading.png'
 		self.theme_cls.theme_style = 'Dark' 
 		self.theme_cls.primary_palette = 'Red'
+		self.theme_cls.material_style = "M3"
 		return Builder.load_file("Design.kv")
 	
 	def add_fav_pokemon(self, pokemon_id, pokemon_name, web_source):
