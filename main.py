@@ -179,7 +179,14 @@ class MainApp(MDApp):
 	def capture_image(self):
 		self.root.ids.camera.export_to_png("assets/clicked_image.png")
 		image = classifier.transform_image(Image.open("assets/clicked_image.png"))
-		self.root.ids.prediction.text = classifier.predict(image)
+		prediction, probability = classifier.predict(image)
+		self.root.ids.prediction.text = prediction
+		
+		sorted_prob = sorted(probability.items(), key = lambda item: item[1])
+		prob_text = ""
+		for _, (character, percentage) in enumerate(sorted_prob[:-6:-1]):
+			prob_text += f"{character} : {percentage}%\n"
+		self.root.ids.prediction_card.text = prob_text
 
 if __name__ == '__main__':
 	MainApp().run()

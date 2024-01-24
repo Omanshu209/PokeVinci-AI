@@ -344,11 +344,35 @@ MDBottomNavigation:
 		    padding : 10
 		    spacing : 10
 	        
-	        Camera:
-	            id: camera
-	            resolution: (640,480)
-	            size_hint_y: 0.7
-	            play: True
+	        MDGridLayout:
+	        	cols: 2
+		        
+		        Camera:
+		            id: camera
+		            resolution: (640,480)
+		            size_hint: .4, .7
+		            play: True
+		        
+		        MDCard:
+					size_hint: .3, .6
+					elevation: 7
+					padding: 25
+					spacing: 25
+					orientation: "vertical"
+					
+					MDScrollView:
+						do_scroll_x: False
+						do_scroll_y: True
+						
+						MDLabel:
+							id: prediction_card
+							size_hint_y: None
+							height: self.texture_size[1]
+							text_size: self.width, None
+							padding: 10, 10
+							bold: True 
+							color: 0, .5, 1, 1
+							halign: "center"
 	        
 	        MDRoundFlatButton:
 	            text: "Predict"
