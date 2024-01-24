@@ -15,7 +15,7 @@ This is a Python-based application that allows users to `search for information 
 <img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/93a7f4a8-e21a-46c0-ac0b-1f1596b5de03" width = "500" align = "right"/>
 
 **AI**: The AI section of this app leverages `advanced image classification` techniques to `predict generation 1 pokemon` species from images. Capture the essence of your `surroundings`, and let the AI unveil the Pokemon that resides within your photos. The application's intuitive interface makes it easy for both Pokemon enthusiasts and AI enthusiasts to dive into a seamless and magical experience.
-<img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/980eaa00-c135-441d-ab94-de1a01529c86" width = "550" align = "left"/>
+<img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/83bcde12-034f-4025-9a27-2575c1b54bf1" width = "550" align = "left"/>
 
 **Favourites**: The Favourites section of this app allows the users the view their `favourite pokemons` in an organised way. A pokemon can be added in the Favourites section by clicking on the `star icon` in the `Search screen`.
 <img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/e82af987-178f-4299-b0f9-8c426cf1c2cf" width = "500" align = "right"/>
