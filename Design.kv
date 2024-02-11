@@ -101,226 +101,230 @@ MDBottomNavigation:
 				    height: "850dp"
 				    padding: "4dp"
 				    radius: 12
-				
-				    MDBoxLayout:
-				        orientation: "vertical"
-				        adaptive_height: True
-				        spacing: "12dp"
-				        padding: "12dp", 0, 0, 0
-				        pos_hint: {"center_y": .5}
-				        
-				        MDTopAppBar:
-				        	id:PokeName
-				        	title:"Pokemon"
-				        
-				        MDProgressBar:
-							value: 100
-							color:(0,0,0,1)
-							size_hint_x : 1
-							
-						MDLabel:
-							id:PokeID
-							text : "ID : "
-							bold: True
-							adaptive_height: True
-						    
-						MDProgressBar:
-							value: 100
-							color:(0,0,0,1)
-							size_hint_x : 1
-						
-						MDLabel:
-						    id:PokeTypes
-						    text: "TYPE : "
-						    bold:True
-						    adaptive_height: True
-						    
-						MDProgressBar:
-							value: 100
-							color:(0,0,0,1)
-							size_hint_x : 1
-						    
-						MDLabel:
-						    id:PokeHeight
-						    text: "HEIGHT : "
-						    bold: True
-						    adaptive_height: True
-						
-						MDProgressBar:
-							value: 100
-							color:(0,0,0,1)
-							size_hint_x : 1
-						
-						MDLabel:
-						    id:PokeWeight
-						    text: "WEIGHT : "
-						    bold:True
-						    adaptive_height: True
-						    
-						MDProgressBar:
-							value: 100
-							color:(0,0,0,1)
-							size_hint_x : 1
-						
-						MDLabel:
-						    id:PokeAbilities
-						    text: "ABILITY : "
-						    bold:True
-						    adaptive_height: True
-						
-						MDProgressBar:
-							value: 100
-							color:(0,0,0,1)
-							size_hint_x : 1
-						
-						MDGridLayout:
-							cols:2
-							adaptive_height:True
-							spacing: "5dp"
+				    
+				    MDScrollView:
+				    	do_scroll_y: True
+				    	do_scroll_x: False
+				    	
+					    MDBoxLayout:
+					        orientation: "vertical"
+					        adaptive_height: True
+					        spacing: "12dp"
+					        padding: "12dp", 0, 0, 0
+					        pos_hint: {"center_y": .5}
+					        
+					        MDTopAppBar:
+					        	id:PokeName
+					        	title:"Pokemon"
+					        
+					        MDProgressBar:
+								value: 100
+								color:(0,0,0,1)
+								size_hint_x : 1
+								
+							MDLabel:
+								id:PokeID
+								text : "ID : "
+								bold: True
+								adaptive_height: True
+							    
+							MDProgressBar:
+								value: 100
+								color:(0,0,0,1)
+								size_hint_x : 1
 							
 							MDLabel:
-							    id:PokeHp
-							    text: "HP : "
-							    size_hint_x:.1
+							    id:PokeTypes
+							    text: "TYPE : "
 							    bold:True
 							    adaptive_height: True
 							    
 							MDProgressBar:
-							    id:Hp_bar
-							    value: 0
-							    color:(0,1,0,1)
-							    size_hint_x : .8
-						
-						MDProgressBar:
-							value: 100
-							color:(0,0,0,1)
-							size_hint_x : 1
-						
-						MDGridLayout:
-							cols:2
-							adaptive_height:True
-							spacing: "5dp"
-							
+								value: 100
+								color:(0,0,0,1)
+								size_hint_x : 1
+							    
 							MDLabel:
-							    id:PokeAttack
-							    text: "ATTACK : "
-							    size_hint_x:.1
+							    id:PokeHeight
+							    text: "HEIGHT : "
 							    bold: True
 							    adaptive_height: True
-							    
-							MDProgressBar:
-							    id:Attack_bar
-							    value: 0
-							    color:(1,0,0,1)
-							    size_hint_x : .8
-						
-						MDProgressBar:
-							value: 100
-							color:(0,0,0,1)
-							size_hint_x : 1
 							
-						MDGridLayout:
-							cols:2
-							adaptive_height:True
-							spacing: "5dp"
+							MDProgressBar:
+								value: 100
+								color:(0,0,0,1)
+								size_hint_x : 1
 							
 							MDLabel:
-							    id:PokeDefense
-							    text: "DEFENCE : "
-							    size_hint_x:.1
+							    id:PokeWeight
+							    text: "WEIGHT : "
 							    bold:True
 							    adaptive_height: True
 							    
 							MDProgressBar:
-							    id:Defense_bar
-							    value: 0
-							    color:(0,0,1,1)
-							    size_hint_x : .8
-						
-						MDProgressBar:
-							value: 100
-							color:(0,0,0,1)
-							size_hint_x : 1
-						
-						MDGridLayout:
-							cols:2
-							adaptive_height:True
-							spacing: "5dp"
-							 
-							MDLabel:
-							    id:PokeSpecialAttack
-							    text: "SPECIAL ATTACK : "
-							    size_hint_x:.1
-							    bold: True
-							    adaptive_height: True
-							
-							MDProgressBar:
-							    id:SpAttack_bar
-							    value: 0
-							    color:(1,1,0,1)
-							    size_hint_x : .8
-						
-						MDProgressBar:
-							value: 100
-							color:(0,0,0,1)
-							size_hint_x : 1
-							
-						MDGridLayout:
-							cols:2
-							adaptive_height:True
-							spacing: "5dp"
+								value: 100
+								color:(0,0,0,1)
+								size_hint_x : 1
 							
 							MDLabel:
-							    id:PokeSpecialDefense
-							    text: "SPECIAL DEFENCE : "
-							    size_hint_x:.1
+							    id:PokeAbilities
+							    text: "ABILITY : "
 							    bold:True
 							    adaptive_height: True
-							    
+							
 							MDProgressBar:
-							    id:SpDefense_bar
-							    value: 0
-							    color:(0,1,1,1)
-							    size_hint_x : .8
-						
-						MDProgressBar:
-							value: 100
-							color:(0,0,0,1)
-							size_hint_x : 1
-						
-						MDGridLayout:
-							cols:2
-							adaptive_height:True
-							spacing: "5dp"
-							 
+								value: 100
+								color:(0,0,0,1)
+								size_hint_x : 1
+							
+							MDGridLayout:
+								cols:2
+								adaptive_height:True
+								spacing: "5dp"
+								
+								MDLabel:
+								    id:PokeHp
+								    text: "HP : "
+								    size_hint_x:.1
+								    bold:True
+								    adaptive_height: True
+								    
+								MDProgressBar:
+								    id:Hp_bar
+								    value: 0
+								    color:(0,1,0,1)
+								    size_hint_x : .8
+							
+							MDProgressBar:
+								value: 100
+								color:(0,0,0,1)
+								size_hint_x : 1
+							
+							MDGridLayout:
+								cols:2
+								adaptive_height:True
+								spacing: "5dp"
+								
+								MDLabel:
+								    id:PokeAttack
+								    text: "ATTACK : "
+								    size_hint_x:.1
+								    bold: True
+								    adaptive_height: True
+								    
+								MDProgressBar:
+								    id:Attack_bar
+								    value: 0
+								    color:(1,0,0,1)
+								    size_hint_x : .8
+							
+							MDProgressBar:
+								value: 100
+								color:(0,0,0,1)
+								size_hint_x : 1
+								
+							MDGridLayout:
+								cols:2
+								adaptive_height:True
+								spacing: "5dp"
+								
+								MDLabel:
+								    id:PokeDefense
+								    text: "DEFENCE : "
+								    size_hint_x:.1
+								    bold:True
+								    adaptive_height: True
+								    
+								MDProgressBar:
+								    id:Defense_bar
+								    value: 0
+								    color:(0,0,1,1)
+								    size_hint_x : .8
+							
+							MDProgressBar:
+								value: 100
+								color:(0,0,0,1)
+								size_hint_x : 1
+							
+							MDGridLayout:
+								cols:2
+								adaptive_height:True
+								spacing: "5dp"
+								 
+								MDLabel:
+								    id:PokeSpecialAttack
+								    text: "SPECIAL ATTACK : "
+								    size_hint_x:.1
+								    bold: True
+								    adaptive_height: True
+								
+								MDProgressBar:
+								    id:SpAttack_bar
+								    value: 0
+								    color:(1,1,0,1)
+								    size_hint_x : .8
+							
+							MDProgressBar:
+								value: 100
+								color:(0,0,0,1)
+								size_hint_x : 1
+								
+							MDGridLayout:
+								cols:2
+								adaptive_height:True
+								spacing: "5dp"
+								
+								MDLabel:
+								    id:PokeSpecialDefense
+								    text: "SPECIAL DEFENCE : "
+								    size_hint_x:.1
+								    bold:True
+								    adaptive_height: True
+								    
+								MDProgressBar:
+								    id:SpDefense_bar
+								    value: 0
+								    color:(0,1,1,1)
+								    size_hint_x : .8
+							
+							MDProgressBar:
+								value: 100
+								color:(0,0,0,1)
+								size_hint_x : 1
+							
+							MDGridLayout:
+								cols:2
+								adaptive_height:True
+								spacing: "5dp"
+								 
+								MDLabel:
+								    id:PokeSpeed
+								    text: "SPEED : "
+								    size_hint_x:.1
+								    bold: True
+								    adaptive_height: True
+								    
+								MDProgressBar:
+								    id:Speed_bar
+								    value: 0
+								    color:(1,1,1,1)
+								    size_hint_x : .8
+							
+							MDProgressBar:
+								value: 100
+								color:(0,0,0,1)
+								size_hint_x : 1
+							
 							MDLabel:
-							    id:PokeSpeed
-							    text: "SPEED : "
-							    size_hint_x:.1
-							    bold: True
-							    adaptive_height: True
-							    
+								id:PokeBaseExperience
+								text: "BASE EXPERIENCE : "
+								bold:True
+								adaptive_height: True
+							
 							MDProgressBar:
-							    id:Speed_bar
-							    value: 0
-							    color:(1,1,1,1)
-							    size_hint_x : .8
-						
-						MDProgressBar:
-							value: 100
-							color:(0,0,0,1)
-							size_hint_x : 1
-						
-						MDLabel:
-							id:PokeBaseExperience
-							text: "BASE EXPERIENCE : "
-							bold:True
-							adaptive_height: True
-						
-						MDProgressBar:
-							value: 100
-							color:(0,0,0,1)
-							size_hint_x : 1
+								value: 100
+								color:(0,0,0,1)
+								size_hint_x : 1
 	
 	MDBottomNavigationItem:
 		name : "Predictor"
