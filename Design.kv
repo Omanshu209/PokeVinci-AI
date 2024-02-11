@@ -1,7 +1,7 @@
 #:import SliverToolbar __main__.SliverToolbar
 
 MDBottomNavigation:
-    panel_color: .2, .2, .2, 1
+    panel_color: 0.2, 0.2, 0.2, 1
 
 	MDBottomNavigationItem:
 		name: "PokemonLoader"
@@ -11,64 +11,64 @@ MDBottomNavigation:
 		MDScreen:
 			
 			MDTextField:
-				id:search_bar
-				mode:'round' 
-				hint_text:"Enter Pokemon's Name/ID"
-				icon_left:'pokeball' 
-				pos_hint:{'center_y':.96}
-				size_hint:.9,None
-				padding:15
+				id: search_bar
+				mode: "round" 
+				hint_text: "Pokemon's Name/ID"
+				icon_left: "pokeball"
+				pos_hint: {"center_y": 0.96}
+				size_hint: 0.9, None
+				padding: 15
 				
 			MDRoundFlatButton:
-				text:'PokeSearch' 
-				pos_hint:{'center_x':.5,'center_y':.89}
-				size_hint:.2,.06
+				text: "PokeSearch"
+				pos_hint: {"center_x": 0.5, "center_y": 0.89}
+				size_hint: 0.2, 0.06
 				on_press:
 					app.loading_screen()
 				on_release:
 					app.UpdatePokemon(root.ids.search_bar.text.lower())
 	
 			MDRoundFlatButton:
-				text:'Clear' 
-				pos_hint:{'center_x':.95,'center_y':.96}
-				size_hint:.09,.004
+				text: "Clear"
+				pos_hint: {"center_x": 0.95, "center_y": 0.96}
+				size_hint: 0.09, 0.004
 				on_release:
 					app.ClearWindow()
 			
 			MDCard:
-				size_hint:.95,.72
-				pos_hint:{'center_x':.5,'center_y':.47}
-				elevation:7
-				padding:25
-				spacing:25
-				orientation:"vertical"
+				size_hint: 0.95, 0.72
+				pos_hint: {"center_x": 0.5, "center_y": 0.47}
+				elevation: 7
+				padding: 25
+				spacing: 25
+				orientation: "vertical"
 				
 				MDIconButton:
 					id: star_button
 					icon: "cards-heart-outline"
-					size_hint: .05, .05
-					pos_hint: {"center_x": .92}
+					size_hint: 0.05, 0.05
+					pos_hint: {"center_x": 0.92}
 					on_press:
 						app.star()
 						app.update_library()
 				
 				AsyncImage:
-				    id:pokemon_image
-				    source:"assets/pokeball.gif"
-				    pos_hint:{"center_x": .5}
-				    allow_stretch:True
+				    id: pokemon_image
+				    source: "assets/pokeball.gif"
+				    pos_hint: {"center_x": 0.5}
+				    allow_stretch: True
 	    		    
 	    		MDRectangleFlatButton:
-	    			id:viewer
-	    			text:"Pokemon"
-	    			size_hint:.4,.1
-	    			pos_hint:{"center_x":.5}
+	    			id: viewer
+	    			text: "Pokemon"
+	    			size_hint: 0.4, 0.1
+	    			pos_hint: {"center_x": 0.5}
 			
 			MDRectangleFlatButton:
-				text:'D   e   v   e   l   o   p   e   d       B   y       O   m   a   n   s   h   u' 
-				pos_hint:{'center_x':.5,'center_y':0.045}
-				size_hint:1,.05
-				bold:True
+				text: "D   e   v   e   l   o   p   e   d       B   y       O   m   a   n   s   h   u"
+				pos_hint: {"center_x": 0.5, "center_y": 0.045}
+				size_hint: 1, 0.05
+				bold: True
 		
 	MDBottomNavigationItem:
 		name: "PokemonDetails"
@@ -84,9 +84,9 @@ MDBottomNavigation:
 	            MDRelativeLayout:
 	                	
 	                AsyncImage:
-	                    id:PokeDetailImg
-	                    allow_stretch:True
-	                    size_hint:(1,1)
+	                    id: PokeDetailImg
+	                    allow_stretch: True
+	                    size_hint: (1, 1)
 	                    source: "assets/pokeball.gif"
 	
 	        MDSliverAppbarContent:
@@ -111,242 +111,242 @@ MDBottomNavigation:
 					        adaptive_height: True
 					        spacing: "12dp"
 					        padding: "12dp", 0, 0, 0
-					        pos_hint: {"center_y": .5}
+					        pos_hint: {"center_y": 0.5}
 					        
 					        MDTopAppBar:
-					        	id:PokeName
-					        	title:"Pokemon"
+					        	id: PokeName
+					        	title: "Pokemon"
 					        
 					        MDProgressBar:
 								value: 100
-								color:(0,0,0,1)
-								size_hint_x : 1
+								color: (0, 0, 0, 1)
+								size_hint_x: 1
 								
 							MDLabel:
-								id:PokeID
-								text : "ID : "
+								id: PokeID
+								text: "ID : "
 								bold: True
 								adaptive_height: True
 							    
 							MDProgressBar:
 								value: 100
-								color:(0,0,0,1)
-								size_hint_x : 1
+								color: (0, 0, 0, 1)
+								size_hint_x: 1
 							
 							MDLabel:
-							    id:PokeTypes
+							    id: PokeTypes
 							    text: "TYPE : "
-							    bold:True
+							    bold: True
 							    adaptive_height: True
 							    
 							MDProgressBar:
 								value: 100
-								color:(0,0,0,1)
-								size_hint_x : 1
+								color: (0, 0, 0, 1)
+								size_hint_x: 1
 							    
 							MDLabel:
-							    id:PokeHeight
+							    id: PokeHeight
 							    text: "HEIGHT : "
 							    bold: True
 							    adaptive_height: True
 							
 							MDProgressBar:
 								value: 100
-								color:(0,0,0,1)
-								size_hint_x : 1
+								color: (0, 0, 0, 1)
+								size_hint_x: 1
 							
 							MDLabel:
-							    id:PokeWeight
+							    id: PokeWeight
 							    text: "WEIGHT : "
-							    bold:True
+							    bold: True
 							    adaptive_height: True
 							    
 							MDProgressBar:
 								value: 100
-								color:(0,0,0,1)
-								size_hint_x : 1
+								color: (0, 0, 0, 1)
+								size_hint_x: 1
 							
 							MDLabel:
-							    id:PokeAbilities
+							    id: PokeAbilities
 							    text: "ABILITY : "
-							    bold:True
+							    bold: True
 							    adaptive_height: True
 							
 							MDProgressBar:
 								value: 100
-								color:(0,0,0,1)
-								size_hint_x : 1
+								color: (0, 0, 0, 1)
+								size_hint_x: 1
 							
 							MDGridLayout:
-								cols:2
-								adaptive_height:True
+								cols: 2
+								adaptive_height: True
 								spacing: "5dp"
 								
 								MDLabel:
-								    id:PokeHp
+								    id: PokeHp
 								    text: "HP : "
-								    size_hint_x:.1
-								    bold:True
+								    size_hint_x: 0.1
+								    bold: True
 								    adaptive_height: True
 								    
 								MDProgressBar:
-								    id:Hp_bar
+								    id: Hp_bar
 								    value: 0
-								    color:(0,1,0,1)
-								    size_hint_x : .8
+								    color: (0, 1, 0, 1)
+								    size_hint_x : 0.8
 							
 							MDProgressBar:
 								value: 100
-								color:(0,0,0,1)
-								size_hint_x : 1
+								color: (0, 0, 0, 1)
+								size_hint_x: 1
 							
 							MDGridLayout:
-								cols:2
-								adaptive_height:True
+								cols: 2
+								adaptive_height: True
 								spacing: "5dp"
 								
 								MDLabel:
-								    id:PokeAttack
+								    id: PokeAttack
 								    text: "ATTACK : "
-								    size_hint_x:.1
+								    size_hint_x: 0.1
 								    bold: True
 								    adaptive_height: True
 								    
 								MDProgressBar:
-								    id:Attack_bar
+								    id: Attack_bar
 								    value: 0
-								    color:(1,0,0,1)
-								    size_hint_x : .8
+								    color: (1, 0, 0, 1)
+								    size_hint_x : 0.8
 							
 							MDProgressBar:
 								value: 100
-								color:(0,0,0,1)
-								size_hint_x : 1
+								color: (0, 0, 0, 1)
+								size_hint_x: 1
 								
 							MDGridLayout:
-								cols:2
-								adaptive_height:True
+								cols: 2
+								adaptive_height: True
 								spacing: "5dp"
 								
 								MDLabel:
-								    id:PokeDefense
+								    id: PokeDefense
 								    text: "DEFENCE : "
-								    size_hint_x:.1
-								    bold:True
+								    size_hint_x: 0.1
+								    bold: True
 								    adaptive_height: True
 								    
 								MDProgressBar:
-								    id:Defense_bar
+								    id: Defense_bar
 								    value: 0
-								    color:(0,0,1,1)
-								    size_hint_x : .8
+								    color: (0, 0, 1, 1)
+								    size_hint_x: 0.8
 							
 							MDProgressBar:
 								value: 100
-								color:(0,0,0,1)
-								size_hint_x : 1
+								color: (0, 0, 0, 1)
+								size_hint_x: 1
 							
 							MDGridLayout:
-								cols:2
-								adaptive_height:True
+								cols: 2
+								adaptive_height: True
 								spacing: "5dp"
 								 
 								MDLabel:
-								    id:PokeSpecialAttack
+								    id: PokeSpecialAttack
 								    text: "SPECIAL ATTACK : "
-								    size_hint_x:.1
+								    size_hint_x: 0.1
 								    bold: True
 								    adaptive_height: True
 								
 								MDProgressBar:
-								    id:SpAttack_bar
+								    id: SpAttack_bar
 								    value: 0
-								    color:(1,1,0,1)
-								    size_hint_x : .8
+								    color: (1, 1, 0, 1)
+								    size_hint_x: 0.8
 							
 							MDProgressBar:
 								value: 100
-								color:(0,0,0,1)
-								size_hint_x : 1
+								color: (0, 0, 0, 1)
+								size_hint_x: 1
 								
 							MDGridLayout:
-								cols:2
-								adaptive_height:True
+								cols: 2
+								adaptive_height: True
 								spacing: "5dp"
 								
 								MDLabel:
-								    id:PokeSpecialDefense
+								    id: PokeSpecialDefense
 								    text: "SPECIAL DEFENCE : "
-								    size_hint_x:.1
-								    bold:True
+								    size_hint_x: 0.1
+								    bold: True
 								    adaptive_height: True
 								    
 								MDProgressBar:
-								    id:SpDefense_bar
+								    id: SpDefense_bar
 								    value: 0
-								    color:(0,1,1,1)
-								    size_hint_x : .8
+								    color: (0, 1, 1, 1)
+								    size_hint_x: 0.8
 							
 							MDProgressBar:
 								value: 100
-								color:(0,0,0,1)
-								size_hint_x : 1
+								color: (0, 0, 0, 1)
+								size_hint_x: 1
 							
 							MDGridLayout:
-								cols:2
-								adaptive_height:True
+								cols: 2
+								adaptive_height: True
 								spacing: "5dp"
 								 
 								MDLabel:
-								    id:PokeSpeed
+								    id: PokeSpeed
 								    text: "SPEED : "
-								    size_hint_x:.1
+								    size_hint_x: 0.1
 								    bold: True
 								    adaptive_height: True
 								    
 								MDProgressBar:
-								    id:Speed_bar
+								    id: Speed_bar
 								    value: 0
-								    color:(1,1,1,1)
-								    size_hint_x : .8
+								    color: (1, 1, 1, 1)
+								    size_hint_x: 0.8
 							
 							MDProgressBar:
 								value: 100
-								color:(0,0,0,1)
-								size_hint_x : 1
+								color: (0, 0, 0, 1)
+								size_hint_x: 1
 							
 							MDLabel:
-								id:PokeBaseExperience
+								id: PokeBaseExperience
 								text: "BASE EXPERIENCE : "
-								bold:True
+								bold: True
 								adaptive_height: True
 							
 							MDProgressBar:
 								value: 100
-								color:(0,0,0,1)
-								size_hint_x : 1
+								color: (0, 0, 0, 1)
+								size_hint_x: 1
 	
 	MDBottomNavigationItem:
-		name : "Predictor"
-		text : "AI"
-		icon : "brain"
+		name: "Predictor"
+		text: "AI"
+		icon: "brain"
 		
 		MDBoxLayout:
-		    orientation : "vertical"
-		    padding : 10
-		    spacing : 10
+		    orientation: "vertical"
+		    padding: 10
+		    spacing: 10
 	        
 	        MDGridLayout:
 	        	cols: 2
 		        
 		        Camera:
 		            id: camera
-		            resolution: (640,480)
-		            size_hint: .4, .7
+		            resolution: (640, 480)
+		            size_hint: 0.4, 0.7
 		            play: True
 		        
 		        MDCard:
-					size_hint: .3, .6
+					size_hint: 0.3, 0.6
 					elevation: 7
 					padding: 25
 					spacing: 25
@@ -363,25 +363,25 @@ MDBottomNavigation:
 							text_size: self.width, None
 							padding: 10, 10
 							bold: True 
-							color: 0, .5, 1, 1
+							color: 0, 0.5, 1, 1
 							halign: "center"
 	        
 	        MDRoundFlatButton:
 	            text: "Predict"
-	            pos_hint: {"center_x" : 0.5}
+	            pos_hint: {"center_x": 0.5}
 	            on_release: app.capture_image()
 	        
 	        MDRectangleFlatButton:
 	        	id: prediction
 				text: "Prediction" 
-				pos_hint: {'center_x':.5}
-				size_hint: 0.6,.15
+				pos_hint: {'center_x': 0.5}
+				size_hint: 0.6, 0.15
 				bold: True
 	
 	MDBottomNavigationItem:
-		name : "library"
-		text : "Favourites"
-		icon : "cards-heart"
+		name: "library"
+		text: "Favourites"
+		icon: "cards-heart"
 		
 		MDScrollView:
 			do_scroll_y: True
