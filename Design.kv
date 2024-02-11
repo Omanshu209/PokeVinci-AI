@@ -15,8 +15,8 @@ MDBottomNavigation:
 				mode: "round" 
 				hint_text: "Pokemon's Name/ID"
 				icon_left: "pokeball"
-				pos_hint: {"center_y": 0.96}
-				size_hint: 0.9, None
+				pos_hint: {"center_x": 0.4, "center_y": 0.96}
+				size_hint: 0.8, 0.05
 				padding: 15
 				
 			MDRoundFlatButton:
@@ -30,8 +30,8 @@ MDBottomNavigation:
 	
 			MDRoundFlatButton:
 				text: "Clear"
-				pos_hint: {"center_x": 0.95, "center_y": 0.96}
-				size_hint: 0.09, 0.004
+				pos_hint: {"center_x": 0.905, "center_y": 0.96}
+				size_hint: 0.18, 0.05
 				on_release:
 					app.ClearWindow()
 			
@@ -185,7 +185,7 @@ MDBottomNavigation:
 								MDLabel:
 								    id: PokeHp
 								    text: "HP : "
-								    size_hint_x: 0.1
+								    size_hint_x: 0.3
 								    bold: True
 								    adaptive_height: True
 								    
@@ -193,7 +193,7 @@ MDBottomNavigation:
 								    id: Hp_bar
 								    value: 0
 								    color: (0, 1, 0, 1)
-								    size_hint_x : 0.8
+								    size_hint_x : 0.6
 							
 							MDProgressBar:
 								value: 100
@@ -208,7 +208,7 @@ MDBottomNavigation:
 								MDLabel:
 								    id: PokeAttack
 								    text: "ATTACK : "
-								    size_hint_x: 0.1
+								    size_hint_x: 0.3
 								    bold: True
 								    adaptive_height: True
 								    
@@ -216,7 +216,7 @@ MDBottomNavigation:
 								    id: Attack_bar
 								    value: 0
 								    color: (1, 0, 0, 1)
-								    size_hint_x : 0.8
+								    size_hint_x : 0.6
 							
 							MDProgressBar:
 								value: 100
@@ -231,7 +231,7 @@ MDBottomNavigation:
 								MDLabel:
 								    id: PokeDefense
 								    text: "DEFENCE : "
-								    size_hint_x: 0.1
+								    size_hint_x: 0.3
 								    bold: True
 								    adaptive_height: True
 								    
@@ -239,7 +239,7 @@ MDBottomNavigation:
 								    id: Defense_bar
 								    value: 0
 								    color: (0, 0, 1, 1)
-								    size_hint_x: 0.8
+								    size_hint_x: 0.6
 							
 							MDProgressBar:
 								value: 100
@@ -254,7 +254,7 @@ MDBottomNavigation:
 								MDLabel:
 								    id: PokeSpecialAttack
 								    text: "SPECIAL ATTACK : "
-								    size_hint_x: 0.1
+								    size_hint_x: 0.3
 								    bold: True
 								    adaptive_height: True
 								
@@ -262,7 +262,7 @@ MDBottomNavigation:
 								    id: SpAttack_bar
 								    value: 0
 								    color: (1, 1, 0, 1)
-								    size_hint_x: 0.8
+								    size_hint_x: 0.6
 							
 							MDProgressBar:
 								value: 100
@@ -277,7 +277,7 @@ MDBottomNavigation:
 								MDLabel:
 								    id: PokeSpecialDefense
 								    text: "SPECIAL DEFENCE : "
-								    size_hint_x: 0.1
+								    size_hint_x: 0.3
 								    bold: True
 								    adaptive_height: True
 								    
@@ -285,7 +285,7 @@ MDBottomNavigation:
 								    id: SpDefense_bar
 								    value: 0
 								    color: (0, 1, 1, 1)
-								    size_hint_x: 0.8
+								    size_hint_x: 0.6
 							
 							MDProgressBar:
 								value: 100
@@ -300,7 +300,7 @@ MDBottomNavigation:
 								MDLabel:
 								    id: PokeSpeed
 								    text: "SPEED : "
-								    size_hint_x: 0.1
+								    size_hint_x: 0.3
 								    bold: True
 								    adaptive_height: True
 								    
@@ -308,7 +308,7 @@ MDBottomNavigation:
 								    id: Speed_bar
 								    value: 0
 								    color: (1, 1, 1, 1)
-								    size_hint_x: 0.8
+								    size_hint_x: 0.6
 							
 							MDProgressBar:
 								value: 100
