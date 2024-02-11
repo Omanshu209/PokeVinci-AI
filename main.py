@@ -26,9 +26,9 @@ class SliverToolbar(MDTopAppBar):
 class MainApp(MDApp):
 	
 	def build(self):
-		Loader.loading_image = 'assets/loading.png'
-		self.theme_cls.theme_style = 'Dark' 
-		self.theme_cls.primary_palette = 'Red'
+		Loader.loading_image = "assets/loading.png"
+		self.theme_cls.theme_style = "Dark"
+		self.theme_cls.primary_palette = "Red"
 		self.theme_cls.material_style = "M3"
 		return Builder.load_file("Design.kv")
 	
@@ -65,8 +65,8 @@ class MainApp(MDApp):
 			for content in contents:
 				raw_data = get(f"https://pokeapi.co/api/v2/pokemon/{content}")
 				data = loads(raw_data.text)
-				name = str(data['name']).capitalize()
-				self.add_fav_pokemon(content, name, data['sprites']['front_default'])
+				name = str(data["name"]).capitalize()
+				self.add_fav_pokemon(content, name, data["sprites"]["front_default"])
 	
 	def on_start(self):
 		self.update_library()
@@ -76,7 +76,7 @@ class MainApp(MDApp):
 			with open("assets/favourite_pokemons.txt", "r+") as file:
 				contents = file.read()
 				
-				if contents != "":
+				if contents != '':
 					file.write(',' + self.root.ids.PokeID.text[5:])
 				
 				else:
@@ -97,7 +97,7 @@ class MainApp(MDApp):
 					new_contents += ',' + content
 			
 			else:
-				new_contents = ""
+				new_contents = ''
 			
 			with open("assets/favourite_pokemons.txt", 'w') as file:
 				file.write(new_contents)
@@ -112,15 +112,15 @@ class MainApp(MDApp):
 			raw_data = get(f"https://pokeapi.co/api/v2/pokemon/{Pokemon}")
 			data = loads(raw_data.text)
 			
-			pokemon_id = data['id']
-			name = str(data['name'])[0].upper() + str(data['name'])[1:]
+			pokemon_id = data["id"]
+			name = str(data["name"]).capitalize()
 			
 			if path.exists(f"assets/Pokemon_Images_Shiny/{pokemon_id}.png"):
 				pokemon_img = f"assets/Pokemon_Images_Shiny/{pokemon_id}.png"
 				self.root.ids.pokemon_image.source = pokemon_img
 			
 			else:
-				pokemon_img = data['sprites']['front_default']
+				pokemon_img = data["sprites"]["front_default"]
 				self.root.ids.pokemon_image.source = pokemon_img
 			
 			self.root.ids.viewer.text = name
@@ -132,17 +132,17 @@ class MainApp(MDApp):
 			self.root.ids.PokeWeight.text = f"WEIGHT : {data['weight']}"
 			self.root.ids.PokeTypes.text = "TYPE : "
 			
-			for t in data['types']:
-				self.root.ids.PokeTypes.text += f"\n~ {t['type']['name']}"
+			for Type in data["types"]:
+				self.root.ids.PokeTypes.text += f"\n    {Type['type']['name']}"
 				
-			self.root.ids.PokeAbilities.text = "ABILITIES :- \n"
+			self.root.ids.PokeAbilities.text = "ABILITIES : "
 			
-			for a in data['abilities']:
-				self.root.ids.PokeAbilities.text += f"\n~ {a['ability']['name']}"
+			for ability in data["abilities"]:
+				self.root.ids.PokeAbilities.text += f"\n    {ability['ability']['name']}"
 			
-			for stat in data['stats']:
-				stat_name = stat['stat']['name']
-				base_stat = stat['base_stat']
+			for stat in data["stats"]:
+				stat_name = stat["stat"]["name"]
+				base_stat = stat["base_stat"]
 				
 				if stat_name in ["hp", "attack", "defense", "speed"]:
 					self.root.ids[f"Poke{stat_name.capitalize()}"].text = f"{stat_name.upper()} : {base_stat}"
@@ -173,7 +173,7 @@ class MainApp(MDApp):
 			self.root.ids.pokemon_image.source = "assets/error.png"
 			
 	def ClearWindow(self):
-		self.root.ids.search_bar.text = ""
+		self.root.ids.search_bar.text = ''
 		self.root.ids.viewer.text = "Pokemon"
 		self.root.ids.pokemon_image.source = "assets/pokeball.gif"
 		self.root.ids.PokeDetailImg.source = "assets/pokeball.gif"
@@ -186,10 +186,10 @@ class MainApp(MDApp):
 		self.root.ids.prediction.text = prediction
 		
 		sorted_prob = sorted(probability.items(), key = lambda item: item[1])
-		prob_text = ""
+		prob_text = ''
 		for _, (character, percentage) in enumerate(sorted_prob[:-6:-1]):
 			prob_text += f"{character} : {percentage}%\n"
 		self.root.ids.prediction_card.text = prob_text
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 	MainApp().run()
