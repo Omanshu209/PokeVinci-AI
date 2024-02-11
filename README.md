@@ -9,16 +9,16 @@
 This is a Python-based application that allows users to `search for information about different Pokemons`. The app has four main screens:
 
 **Search**: This screen allows users to search for a Pokemon by name or ID. When the user enters a valid query and clicks the search button, the app `loads the corresponding Pokemon's information`.
-<img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/3aff2e22-6f2d-4b9b-b838-debd7a499567" width = "500" align = "left"/>
+<img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/599cb065-07e8-4be9-ba4b-e127686f6f98" width = "500" align = "left"/>
 
 **Stats**: This screen `displays the information about the Pokemon` selected by the user in the Pokemon Loader screen including its `image`, `name`, `ID`, `type(s)`, `height`, `weight`, `abilities`, and `stats` (HP, Attack, Defense, Special Attack, Special Defense, and Speed). The app shows the same information as in the previous screen but in a more detailed and organized way.
-<img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/93a7f4a8-e21a-46c0-ac0b-1f1596b5de03" width = "500" align = "right"/>
+<img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/bbb38427-1bb2-493a-9e51-3757b9439df7" width = "500" align = "right"/>
 
 **AI**: The AI section of this app leverages `advanced image classification` techniques to `predict generation 1 pokemon` species from images. Capture the essence of your `surroundings`, and let the AI unveil the Pokemon that resides within your photos. The application's intuitive interface makes it easy for both Pokemon enthusiasts and AI enthusiasts to dive into a seamless and magical experience.
 <img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/83bcde12-034f-4025-9a27-2575c1b54bf1" width = "550" align = "left"/>
 
 **Favourites**: The Favourites section of this app allows the users the view their `favourite pokemons` in an organised way. A pokemon can be added in the Favourites section by clicking on the `star icon` in the `Search screen`.
-<img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/e82af987-178f-4299-b0f9-8c426cf1c2cf" width = "500" align = "right"/>
+<img src = "https://github.com/Omanshu209/PokeVinci-AI/assets/114089324/41f81a8b-67a3-46ae-bc87-b8cfea8339bc" width = "500" align = "right"/>
 
 ## Technologies Used
 The app is built using the following technologies:
