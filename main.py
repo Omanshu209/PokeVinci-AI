@@ -9,6 +9,9 @@ from PIL import Image
 from Deep_Learning.PokemonClassifier import PokemonClassifier
 from kivymd.uix.imagelist.imagelist import MDSmartTile
 from kivymd.uix.label.label import MDLabel
+from kivy.core.text import LabelBase, DEFAULT_FONT
+
+LabelBase.register(DEFAULT_FONT, "assets/font/nasalization.ttf")
 
 classifier = PokemonClassifier(model_path = "Deep_Learning/Model/PokemonClassifier_CNN_Model.pt")
 
